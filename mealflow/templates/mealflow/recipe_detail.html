@@ -23,67 +23,77 @@ MealFlow | {{ recipe.title }}
 		<img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
 	</div>
 
-	{% if recipe.description %}
-	<p class="recipe-detail-description">
-		{{ recipe.description }}
-	</p>
-	{% endif %}
+	<section class="recipe-info-card">
+		{% if recipe.description %}
+		<p class="recipe-detail-description">
+			{{ recipe.description }}
+		</p>
+		{% endif %}
 
-	<div class="recipe-detail-meta">
-		<p>{{ recipe.category.name }}</p>
-		<p>Cook time: {{ recipe.cooking_time }} min</p>
-		<p>Serves: {{ recipe.servings }}</p>
-	</div>
-	{% if user.is_authenticated %}
-	<div class="recipe-detail-save">
-		<button type="button" class="btn btn-primary">
-			<span aria-hidden="true">♡</span>
-			Save recipe
-		</button>
-	</div>
-	{% else %}
-	<p class="login-prompt">
-		<a href="{% url 'login' %}">Log in</a> to save this recipe.
-	</p>
-	{% endif %}
-
-	<section class="recipe-detail-section">
-		<h2>Ingredients</h2>
-
-		<ul class="ingredient-list">
-			{% for ingredient in recipe.ingredients.all %}
-			<li>
-				{% if ingredient.quantity %}
-				{{ ingredient.quantity }}
-				{% endif %}
-				{{ ingredient.name }}
-			</li>
-			{% empty %}
-			<li>No ingredients have been added.</li>
-			{% endfor %}
-		</ul>
-	</section>
-
-	<section class="recipe-detail-section">
-		<h2>Instructions</h2>
-
-		<div class="instruction-text">
-			{{ recipe.instructions|linebreaks }}
+		<div class="recipe-detail-meta">
+			<span>{{ recipe.category.name }}</span>
+			<span>Cook time: {{ recipe.cooking_time }} min</span>
+			<span>Serves: {{ recipe.servings }}</span>
 		</div>
+
+		{% if user.is_authenticated %}
+		<div class="recipe-detail-save">
+			<button type="button" class="btn btn-save">
+				<span aria-hidden="true">♡</span>
+				Save recipe
+			</button>
+		</div>
+		{% else %}
+		<p class="login-prompt">
+			<a href="{% url 'login' %}">Log in</a> to save this recipe.
+		</p>
+		{% endif %}
+
 	</section>
+
+	<div class="recipe-content-card">
+
+		<section class="recipe-detail-section">
+			<h2>Ingredients</h2>
+
+			<ul class="ingredient-list">
+				{% for ingredient in recipe.ingredients.all %}
+				<li>
+					{% if ingredient.quantity %}
+					{{ ingredient.quantity }}
+					{% endif %}
+					{{ ingredient.name }}
+				</li>
+				{% empty %}
+				<li>No ingredients have been added.</li>
+				{% endfor %}
+			</ul>
+		</section>
+
+		<section class="recipe-detail-section">
+			<h2>Instructions</h2>
+
+			<div class="instruction-text">
+				{{ recipe.instructions|linebreaks }}
+			</div>
+		</section>
+
+	</div>
 
 </article>
 
 <div class="recipe-detail-footer">
-	<a href="{% url 'home' %}" class="btn btn-secondary">
-		Back to recipes
-	</a>
+	<div class="recipe-detail-footer-inner">
+		<a href="{% url 'home' %}" class="btn btn-secondary">
+			Back to recipes
+		</a>
 
-	{% if user.is_authenticated and recipe.author == user %}
-	<a href="#" class="btn btn-primary">
-		Edit recipe
-	</a>
-	{% endif %}
+		{% if user.is_authenticated and recipe.author == user %}
+		<a href="#" class="btn btn-primary">
+			Edit recipe
+		</a>
+		{% endif %}
+	</div>
 </div>
 
 {% endblock %}

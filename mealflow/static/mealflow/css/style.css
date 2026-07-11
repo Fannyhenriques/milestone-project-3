@@ -14,12 +14,33 @@
 	--color-secondary: #489E90;
 	--color-surface: #ffffff;
 
+
+	--font-primary: "Mulish", sans-serif;
+
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-weight-black: 900;
+
 }
 
+/*spacing*/
 
 /* ====================================
    GLOBAL STYLES
 ==================================== */
+
+body {
+	background-color: var(--color-background);
+	font-family: var(--font-primary);
+	height: 100vh;
+	max-width: 100%;
+	color: var(--color-primary);
+	display: flex;
+	flex-direction: column;
+}
+}
 
 /* ====================================
    LAYOUT

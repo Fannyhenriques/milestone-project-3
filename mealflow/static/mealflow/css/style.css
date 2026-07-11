@@ -291,8 +291,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .recipe-card:hover {
-	transform: translateY(-1px);
-	border: 1px solid var(--color-secondary);
+	transform: translateY(-2px);
 	box-shadow: 0 0.5rem 1rem rgba(19, 52, 48, 0.15);
 }
 
@@ -304,7 +303,13 @@ input[type="search"]::-webkit-search-cancel-button {
 .recipe-card-image {
 	aspect-ratio: 4 / 3;
 	background-color: var(--color-secondary);
-	opacity: 0.35;
+}
+
+.recipe-card-image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .recipe-card-content {

@@ -23,3 +23,13 @@ def recipe_detail(request, recipe_id):
     return render(request, "mealflow/recipe_detail.html", context)
 
 
+def login_view(request):
+    return render(request, "mealflow/login.html")
+
+
+def register_view(request):
+    return render(request, "mealflow/register.html")
+
+
+def my_recipes(request):
+    return render(request, "mealflow/my_recipes.html")

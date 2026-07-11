@@ -125,7 +125,7 @@ img {
 .logo-img {
 	width: 120px;
 	height: auto;
-	filter: saturate(150%);
+	filter: saturate(110%);
 }
 
 .nav-toggle {
@@ -139,6 +139,28 @@ img {
 
 .nav-links {
 	display: none;
+}
+
+.logout-form {
+	margin: 0;
+}
+
+.nav-link-button {
+	padding: 0.2rem 0.5rem;
+	border: 0;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+	border: 2px solid var(--color-primary);
+	font-weight: var(--font-weight-semibold);
+	font-size: 1.2rem;
+}
+
+.nav-link-button:hover,
+.nav-link-button:focus-visible {
+	color: var(--color-secondary);
+	border-color: var(--color-secondary);
 }
 
 /* ====================================

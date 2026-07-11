@@ -85,6 +85,32 @@ Welcome to MealFlow - your personal recipe collection.
 		</div>
 	</form>
 </section>
+
+<section class="recipe-grid-section" aria-labelledby="recipe-grid-heading">
+	<h2 id="recipe-grid-heading">Recipes</h2>
+
+	<div class="recipe-grid">
+		{% for recipe in recipes %}
+		<a href="{% url 'recipe_detail' recipe.id %}" class="recipe-card">
+			<div class="recipe-card-image">
+				<img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
+			</div>
+
+			<div class="recipe-card-content">
+				<h3 class="recipe-card-title">
+					{{ recipe.title }}
+				</h3>
+
+				<p class="recipe-card-category">
+					{{ recipe.get_meal_type_display }} · {{ recipe.category.name }}
+				</p>
+			</div>
+		</a>
+		{% empty %}
+		<p>No recipes have been added yet.</p>
+		{% endfor %}
+	</div>
+
 </section>
 
 {% endblock %}

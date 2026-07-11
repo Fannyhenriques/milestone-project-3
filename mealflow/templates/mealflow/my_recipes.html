@@ -1,0 +1,37 @@
+{% extends 'mealflow/base.html' %}
+
+{% block title %}
+MealFlow | My Recipes
+{% endblock %}
+
+{% block content %}
+
+<section class="my-recipes-section">
+  <header class="page-intro">
+    <h1>My Recipes</h1>
+
+    {% if user.is_authenticated %}
+    <p>
+      Recipes saved and created for {{ user.username }}
+    </p>
+    {% endif %}
+  </header>
+
+  <section class="saved-recipes" aria-labelledby="saved-recipes-heading">
+    <h2 id="saved-recipes-heading">Saved Recipes</h2>
+
+    <div class="recipe-grid">
+      <p>Your saved recipes will appear here.</p>
+    </div>
+  </section>
+
+  <section class="created-recipes" aria-labelledby="created-recipes-heading">
+    <h2 id="created-recipes-heading">My Created Recipes</h2>
+
+    <div class="recipe-grid">
+      <p>Your created recipes will appear here.</p>
+    </div>
+  </section>
+</section>
+
+{% endblock %}

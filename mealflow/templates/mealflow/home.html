@@ -1,18 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'mealflow/base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MealFlow</title>
-</head>
+{% block title %}
+MealFlow | Home
+{% endblock %}
 
-<body>
+{% block description %}
+Welcome to MealFlow - your personal recipe collection.
+{% endblock %}
 
-    <h1>Welcome to MealFlow 🍽️</h1>
+{% block content %}
 
-    <p>Your personal recipe collection.</p>
+<section class="page-intro">
+	<h1>Welcome to MealFlow</h1>
 
-</body>
+	<h2>Your personal recipe collection.</h2>
+</section>
 
-</html>
+<section class="recipe-search-section" aria-labelledby="recipe-search-heading">
+	<h2 id="recipe-search-heading" class="visually-hidden">
+		Search and filter recipes
+	</h2>
+
+	<form class="recipe-search-form" method="GET" action="">
+		<div class="search-field">
+			<label for="recipe-search" class="visually-hidden">
+				Search recipes
+			</label>
+			<input type="search" id="recipe-search" name="q" placeholder="Search recipe" autocomplete="off" minlength="2"
+				maxlength="75" spellcheck="false">
+		</div>
+
+</section>
+
+{% endblock %}

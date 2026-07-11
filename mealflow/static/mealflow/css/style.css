@@ -40,6 +40,19 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+a {
+	color: var(--color-secondary);
+	font-weight: var(--font-weight-bold);
+	font-size: 1.2rem;
+	margin: 0;
+}
+
+.nav-links a:hover {
+	color: var(--color-secondary);
+	text-decoration: underline;
+}
+img {
+	max-width: 100%;
 }
 
 /* ====================================
@@ -53,6 +66,41 @@ body {
 /* ====================================
    NAVIGATION
 ==================================== */
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.site-logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--color-primary);
+	text-decoration: none;
+	font-weight: var(--font-weight-black);
+	font-size: 1.3rem;
+}
+
+.logo-img {
+	width: 120px;
+	height: auto;
+	filter: saturate(150%);
+}
+
+.nav-toggle {
+	display: block;
+	background: none;
+	border: none;
+	color: var(--color-primary);
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+.nav-links {
+	display: none;
+}
 
 /* ====================================
    BUTTONS

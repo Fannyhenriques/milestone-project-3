@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% block description %}MealFlow - Your personal recipe collection.{% endblock %}">
+  <meta name="keywords" content="recipes, cooking, meal planner, food">
+  <meta name="author" content="Fanny Henriques">
+
+  <title>{% block title %}MealFlow{% endblock %}</title>
+
+  {% block extra_css %}
+  {% endblock %}
+</head>
+
+<body>
+  <a href="#main-content" class="visually-hidden">Skip to main content</a>
+  <main id="main-content" class="main-content">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer class="footer-container">
+    <p>&copy; 2026 MealFlow</p>
+    <p>By F.Henriques</p>
+  </footer>
+
+  <script src="{% static 'mealflow/js/script.js' %}"></script>
+
+  {% block scripts %}
+  {% endblock %}
+
+</body>
+
+</html>

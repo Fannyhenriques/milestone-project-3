@@ -56,7 +56,7 @@ class Recipe(models.Model):
     )
     servings = models.PositiveIntegerField(default=4)
     cooking_time = models.PositiveIntegerField(
-      help_text="Total cooking time in minutes.",
+        help_text="Total cooking time in minutes.",
     )
     image_name = models.CharField(
         max_length=150,
@@ -86,4 +86,28 @@ class Recipe(models.Model):
 
         return self.category.default_image
 
+
+class Ingredient(models.Model):
+    """
+    Represents one ingredient belonging to a recipe.
+    """
+
+    recipe = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE,
+        related_name="ingredients",
+    )
+    quantity = models.CharField(max_length=50, blank=True)
+    name = models.CharField(max_length=150)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "id"]
+
+    def __str__(self):
+        if self.quantity:
+            return f"{self.quantity} {self.name}"
+
+        return self.name
+    
 

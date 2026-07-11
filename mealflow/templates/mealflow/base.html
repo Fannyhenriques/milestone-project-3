@@ -26,6 +26,31 @@
 
 <body>
   <a href="#main-content" class="visually-hidden">Skip to main content</a>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="{% url 'home' %}" class="site-logo" aria-label="MealFlow home">
+        <img src="{% static 'mealflow/images/mealflow-logo.png' %}" alt="MealFlow logo" class="logo-img">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="nav-links">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+
+        {% if user.is_authenticated %}
+        <li><a href="#">My Recipes</a></li>
+        <li><a href="#">Logout</a></li>
+        {% else %}
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
   <main id="main-content" class="main-content">
     {% block content %}
     {% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'mealflow/base.html' %}
+{% load static %}
+
+{% block title %}
+MealFlow | {{ recipe.title }}
+{% endblock %}
+
+{% block description %}
+{{ recipe.description }}
+{% endblock %}
+
+{% block content %}
+
+<article class="recipe-detail-container">
+
+	<header class="recipe-detail-header">
+		<h1 class="recipe-detail-title">
+			{{ recipe.title }}
+		</h1>
+	</header>
+
+	<div class="recipe-detail-image">
+		<img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
+	</div>
+
+	{% if recipe.description %}
+	<p class="recipe-detail-description">
+		{{ recipe.description }}
+	</p>
+	{% endif %}
+
+	<div class="recipe-detail-meta">
+		<p>{{ recipe.category.name }}</p>
+		<p>Cook time: {{ recipe.cooking_time }} min</p>
+		<p>Serves: {{ recipe.servings }}</p>
+	</div>
+	{% if user.is_authenticated %}
+	<div class="recipe-detail-save">
+		<button type="button" class="btn btn-primary">
+			<span aria-hidden="true">♡</span>
+			Save recipe
+		</button>
+	</div>
+	{% else %}
+	<p class="login-prompt">
+		<a href="{% url 'login' %}">Log in</a> to save this recipe.
+	</p>
+	{% endif %}
+
+	<section class="recipe-detail-section">
+		<h2>Ingredients</h2>
+
+		<ul class="ingredient-list">
+			{% for ingredient in recipe.ingredients.all %}
+			<li>
+				{% if ingredient.quantity %}
+				{{ ingredient.quantity }}
+				{% endif %}
+				{{ ingredient.name }}
+			</li>
+			{% empty %}
+			<li>No ingredients have been added.</li>
+			{% endfor %}
+		</ul>
+	</section>
+
+	<section class="recipe-detail-section">
+		<h2>Instructions</h2>
+
+		<div class="instruction-text">
+			{{ recipe.instructions|linebreaks }}
+		</div>
+	</section>
+
+</article>
+
+<div class="recipe-detail-footer">
+	<a href="{% url 'home' %}" class="btn btn-secondary">
+		Back to recipes
+	</a>
+
+	{% if user.is_authenticated and recipe.author == user %}
+	<a href="#" class="btn btn-primary">
+		Edit recipe
+	</a>
+	{% endif %}
+</div>
+
+{% endblock %}

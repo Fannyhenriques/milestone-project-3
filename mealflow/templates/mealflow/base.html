@@ -42,7 +42,14 @@
 
         {% if user.is_authenticated %}
         <li><a href="#">My Recipes</a></li>
-        <li><a href="#">Logout</a></li>
+        <li>
+          <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit" class="nav-link-button">
+              Logout
+            </button>
+          </form>
+        </li>
         {% else %}
         <li><a href="{% url 'login' %}">Login</a></li>
         <li><a href="{% url 'register' %}">Register</a></li>

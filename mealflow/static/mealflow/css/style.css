@@ -344,7 +344,6 @@ input[type="search"]::-webkit-search-cancel-button {
 	gap: 1.5rem;
 }
 
-
 /* ====================================
    FOOTER
 ==================================== */
@@ -384,3 +383,80 @@ input[type="search"]::-webkit-search-cancel-button {
 /* ====================================
    MEDIA QUERIES
 ==================================== */
+
+@media screen and (min-width: 481px) {
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	.footer-container {
+		flex-direction: row;
+		justify-content: space-around;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.recipe-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.recipe-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.site-header {
+		padding: 1rem 2rem;
+	}
+
+	.nav-toggle {
+		display: none;
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-links a {
+		color: var(--color-primary);
+		text-decoration: none;
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.logo-img {
+		width: 190px;
+		height: auto;
+	}
+
+}
+
+@media screen and (min-width: 1024px) {
+	h1 {
+		font-size: 3rem;
+	}
+
+	p {
+		font-size: 1.1rem;
+	}
+
+	a {
+		font-size: 1.3rem;
+	}
+
+	.site-header {
+		padding: 1rem 2.5rem;
+	}
+
+}

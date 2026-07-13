@@ -1,7 +1,5 @@
-from django.shortcuts import get_object_or_404, render
-
-from .models import Recipe
-
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 
 def home(request):
     recipes = Recipe.objects.all()
@@ -23,12 +21,26 @@ def recipe_detail(request, recipe_id):
     return render(request, "mealflow/recipe_detail.html", context)
 
 
-def login_view(request):
-    return render(request, "mealflow/login.html")
-
-
 def register_view(request):
-    return render(request, "mealflow/register.html")
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("home")
+    else:
+        form = UserCreationForm()
+
+    context = {
+        "form": form,
+    }
+
+    return render(
+        request,
+        "mealflow/register.html",
+        context,
+    )
 
 
 def my_recipes(request):

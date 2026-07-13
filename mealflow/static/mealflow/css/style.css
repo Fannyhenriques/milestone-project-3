@@ -731,6 +731,13 @@ input[type="search"]::-webkit-search-cancel-button {
 	}
 }
 
+/* saved recipes *************************************/
+
+.empty-recipes-message {
+	margin: 1.5rem auto;
+	text-align: center;
+}
+
 /* ====================================
    FOOTER
 ==================================== */

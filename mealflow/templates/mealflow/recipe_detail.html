@@ -28,11 +28,13 @@ MealFlow | {{ recipe.title }}
 		<p class="recipe-detail-description">
 			{{ recipe.description }}
 		</p>
+		{% else %}
+		<p> No description has been added for this recipe </p>
 		{% endif %}
 
 		<div class="recipe-detail-meta">
 			<span>{{ recipe.category.name }}</span>
-			<span>Cook time: {{ recipe.cooking_time }} min</span>
+			<span>{{ recipe.cooking_time }} min</span>
 			<span>Serves: {{ recipe.servings }}</span>
 		</div>
 

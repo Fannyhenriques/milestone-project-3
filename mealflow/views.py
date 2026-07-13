@@ -1,5 +1,9 @@
+from .forms import RecipeForm
+from .models import Ingredient, Recipe, SavedRecipe
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect, render
 
 def home(request):
     recipes = Recipe.objects.all()
@@ -39,6 +43,54 @@ def register_view(request):
     return render(
         request,
         "mealflow/register.html",
+        context,
+    )
+
+
+@login_required
+def create_recipe(request):
+    if request.method == "POST":
+        form = RecipeForm(request.POST)
+
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.author = request.user
+            recipe.save()
+
+            ingredient_lines = (
+                form.cleaned_data["ingredients"].splitlines()
+            )
+
+            for order, line in enumerate(
+                ingredient_lines,
+                start=1,
+            ):
+                ingredient_name = line.strip()
+
+                if ingredient_name:
+                    Ingredient.objects.create(
+                        recipe=recipe,
+                        name=ingredient_name,
+                        quantity="",
+                        order=order,
+                    )
+
+            return redirect(
+                "recipe_detail",
+                recipe_id=recipe.id,
+            )
+    else:
+        form = RecipeForm()
+
+    context = {
+        "form": form,
+        "page_title": "Create recipe",
+        "button_text": "Create recipe",
+    }
+
+    return render(
+        request,
+        "mealflow/recipe_form.html",
         context,
     )
 

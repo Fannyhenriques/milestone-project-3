@@ -95,5 +95,70 @@ def create_recipe(request):
     )
 
 
+@login_required
+def edit_recipe(request, recipe_id):
+    recipe = get_object_or_404(
+        Recipe,
+        id=recipe_id,
+        author=request.user,
+    )
+
+    if request.method == "POST":
+        form = RecipeForm(request.POST, instance=recipe)
+
+        if form.is_valid():
+            recipe = form.save()
+
+            recipe.ingredients.all().delete()
+
+            ingredient_lines = (
+                form.cleaned_data["ingredients"].splitlines()
+            )
+
+            for order, line in enumerate(
+                ingredient_lines,
+                start=1,
+            ):
+                ingredient_name = line.strip()
+
+                if ingredient_name:
+                    Ingredient.objects.create(
+                        recipe=recipe,
+                        name=ingredient_name,
+                        quantity="",
+                        order=order,
+                    )
+
+            return redirect(
+                "recipe_detail",
+                recipe_id=recipe.id,
+            )
+    else:
+        existing_ingredients = "\n".join(
+            ingredient.name
+            for ingredient in recipe.ingredients.all()
+        )
+
+        form = RecipeForm(
+            instance=recipe,
+            initial={
+                "ingredients": existing_ingredients,
+            },
+        )
+
+    context = {
+        "form": form,
+        "recipe": recipe,
+        "page_title": "Edit recipe",
+        "button_text": "Save changes",
+    }
+
+    return render(
+        request,
+        "mealflow/recipe_form.html",
+        context,
+    )
+
+
 def my_recipes(request):
     return render(request, "mealflow/my_recipes.html")

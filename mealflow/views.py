@@ -160,5 +160,23 @@ def edit_recipe(request, recipe_id):
     )
 
 
+@login_required
+def delete_recipe(request, recipe_id):
+    recipe = get_object_or_404(
+        Recipe,
+        id=recipe_id,
+        author=request.user,
+    )
+
+    if request.method == "POST":
+        recipe.delete()
+        return redirect("my_recipes")
+
+    return redirect(
+        "recipe_detail",
+        recipe_id=recipe.id,
+    )
+
+
 def my_recipes(request):
     return render(request, "mealflow/my_recipes.html")

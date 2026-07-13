@@ -41,7 +41,7 @@
         <li><a href="{% url 'home' %}">Home</a></li>
 
         {% if user.is_authenticated %}
-        <li><a href="#">My Recipes</a></li>
+        <li><a href="{% url 'my_recipes' %}">My Recipes</a></li>
         <li>
           <form method="post" action="{% url 'logout' %}" class="logout-form">
             {% csrf_token %}

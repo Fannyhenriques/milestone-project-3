@@ -60,6 +60,15 @@
 
   <main id="main-content" class="main-content">
     {% block content %}
+    {% if messages %}
+    <div class="message-container" aria-live="polite">
+      {% for message in messages %}
+      <div class="site-message {{ message.tags }}">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
     {% endblock %}
   </main>
 

@@ -38,6 +38,11 @@ urlpatterns = [
         name="edit_recipe",
     ),
 
+    path(
+        "recipe/<int:recipe_id>/delete/",
+        views.delete_recipe,
+        name="delete_recipe",
+    ),
 
     path(
         "logout/",

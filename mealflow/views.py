@@ -18,8 +18,24 @@ def home(request):
 def recipe_detail(request, recipe_id):
     recipe = get_object_or_404(Recipe, id=recipe_id)
 
+    is_saved = False
+
+    if request.user.is_authenticated:
+        is_saved = SavedRecipe.objects.filter(
+            user=request.user,
+            recipe=recipe,
+        ).exists()
+
+    instruction_steps = [
+        line.strip()
+        for line in recipe.instructions.splitlines()
+        if line.strip()
+    ]
+
     context = {
         "recipe": recipe,
+        "is_saved": is_saved,
+        "instruction_steps": instruction_steps,
     }
 
     return render(request, "mealflow/recipe_detail.html", context)

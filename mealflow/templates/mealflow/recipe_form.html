@@ -1,0 +1,50 @@
+{% extends "mealflow/base.html" %}
+
+{% block title %}
+MealFlow | {{ page_title }}
+{% endblock %}
+
+{% block content %}
+
+<section class="recipe-form-container">
+  <h1>{{ page_title }}</h1>
+
+  <form method="post" class="recipe-form">
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    {% for field in form %}
+    <div class="form-group">
+      <label for="{{ field.id_for_label }}">
+        {{ field.label }}
+      </label>
+
+      {{ field }}
+      {{ field.errors }}
+    </div>
+    {% endfor %}
+
+    <div class="recipe-form-actions">
+      <button type="submit" class="btn btn-primary">
+        {{ button_text }}
+      </button>
+
+      <a href="{% url 'my_recipes' %}" class="btn btn-secondary">
+        Cancel
+      </a>
+    </div>
+  </form>
+
+  {% if recipe %}
+  <form method="post" action="{% url 'delete_recipe' recipe.id %}" class="delete-recipe-form">
+    {% csrf_token %}
+
+    <button type="submit" class="btn btn-danger">
+      Delete recipe
+    </button>
+  </form>
+  {% endif %}
+</section>
+
+{% endblock %}

@@ -25,6 +25,10 @@ urlpatterns = [
          name="register"
     ),
 
+    path("my-recipes/", 
+         views.my_recipes, 
+         name="my_recipes"
+    ),
 
     path(
         "create-recipe/",

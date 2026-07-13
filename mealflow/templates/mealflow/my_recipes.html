@@ -24,12 +24,32 @@ MealFlow | My Recipes
     </div>
   </header>
 
-  <section class="saved-recipes" aria-labelledby="saved-recipes-heading">
-    <h2 id="saved-recipes-heading">Saved Recipes</h2>
+  <section class="recipe-grid-section">
+    <h2 id="recipe-grid-heading">Your saved Recipes</h2>
 
+    {% if saved_recipes %}
     <div class="recipe-grid">
-      <p>Your saved recipes will appear here.</p>
+      {% for recipe in saved_recipes %}
+      <a href="{% url 'recipe_detail' recipe.id %}" class="recipe-card">
+        <div class="recipe-card-image">
+          <img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
+        </div>
+
+        <div class="recipe-card-content">
+          <h3 class="recipe-card-title">{{ recipe.title }}</h3>
+
+          <p class="recipe-card-category">
+            {{ recipe.get_meal_type_display }}
+            ·
+            {{ recipe.category.name }}
+          </p>
+        </div>
+      </a>
+      {% endfor %}
     </div>
+    {% else %}
+    <p class="empty-recipes-message">You have not saved any recipes yet.</p>
+    {% endif %}
   </section>
 
   <section class="recipe-grid-section">

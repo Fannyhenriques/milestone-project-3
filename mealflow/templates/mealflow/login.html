@@ -1,0 +1,40 @@
+{% extends "mealflow/base.html" %}
+
+{% block title %}
+MealFlow | Login
+{% endblock %}
+
+{% block content %}
+
+<section class="auth-container">
+	<h1>Log in</h1>
+
+	<form method="post" class="auth-form">
+		{% csrf_token %}
+
+		{{ form.non_field_errors }}
+
+		<div class="form-group">
+			<label for="{{ form.username.id_for_label }}">
+				Username
+			</label>
+			{{ form.username }}
+			{{ form.username.errors }}
+		</div>
+
+		<div class="form-group">
+			<label for="{{ form.password.id_for_label }}">
+				Password
+			</label>
+			{{ form.password }}
+			{{ form.password.errors }}
+		</div>
+
+		<button type="submit" class="btn btn-primary">
+			Log in
+		</button>
+	</form>
+
+</section>
+
+{% endblock %}

@@ -1,6 +1,7 @@
 from .forms import RecipeForm
 from .models import Ingredient, Recipe, SavedRecipe
 from django.contrib.auth import login
+from django.http import JsonResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
@@ -221,3 +222,30 @@ def my_recipes(request):
     )
 
 
+@login_required
+def toggle_save_recipe(request, recipe_id):
+    recipe = get_object_or_404(Recipe, id=recipe_id)
+
+    if request.method != "POST":
+        return JsonResponse(
+            {"error": "Invalid request method."},
+            status=405,
+        )
+
+    saved_recipe, created = SavedRecipe.objects.get_or_create(
+        user=request.user,
+        recipe=recipe,
+    )
+
+    if created:
+        return JsonResponse({
+            "is_saved": True,
+            "message": f"{recipe.title} was saved.",
+        })
+
+    saved_recipe.delete()
+
+    return JsonResponse({
+        "is_saved": False,
+        "message": f"{recipe.title} was removed.",
+    })

@@ -178,5 +178,30 @@ def delete_recipe(request, recipe_id):
     )
 
 
+@login_required
 def my_recipes(request):
-    return render(request, "mealflow/my_recipes.html")
+    saved_recipe_links = SavedRecipe.objects.filter(
+        user=request.user
+    ).select_related("recipe")
+
+    saved_recipes = [
+        saved_recipe.recipe
+        for saved_recipe in saved_recipe_links
+    ]
+
+    created_recipes = Recipe.objects.filter(
+        author=request.user
+    )
+
+    context = {
+        "saved_recipes": saved_recipes,
+        "created_recipes": created_recipes,
+    }
+
+    return render(
+        request,
+        "mealflow/my_recipes.html",
+        context,
+    )
+
+

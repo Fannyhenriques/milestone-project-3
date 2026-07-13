@@ -1,4 +1,5 @@
 {% extends 'mealflow/base.html' %}
+{% load static %}
 
 {% block title %}
 MealFlow | My Recipes
@@ -15,6 +16,12 @@ MealFlow | My Recipes
       Recipes saved and created for {{ user.username }}
     </p>
     {% endif %}
+
+    <div class="btn-container">
+      <a href="{% url 'create_recipe' %}" class="btn btn-primary">
+        Create recipe
+      </a>
+    </div>
   </header>
 
   <section class="saved-recipes" aria-labelledby="saved-recipes-heading">
@@ -25,13 +32,34 @@ MealFlow | My Recipes
     </div>
   </section>
 
-  <section class="created-recipes" aria-labelledby="created-recipes-heading">
-    <h2 id="created-recipes-heading">My Created Recipes</h2>
+  <section class="recipe-grid-section">
+    <h2 id="recipe-grid-heading">Your created Recipes</h2>
 
+    {% if created_recipes %}
     <div class="recipe-grid">
-      <p>Your created recipes will appear here.</p>
+      {% for recipe in created_recipes %}
+      <a href="{% url 'recipe_detail' recipe.id %}" class="recipe-card">
+        <div class="recipe-card-image">
+          <img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
+        </div>
+
+        <div class="recipe-card-content">
+          <h3 class="recipe-card-title">{{ recipe.title }}</h3>
+
+          <p class="recipe-card-category">
+            {{ recipe.get_meal_type_display }}
+            ·
+            {{ recipe.category.name }}
+          </p>
+        </div>
+      </a>
+      {% endfor %}
     </div>
+    {% else %}
+    <p class="empty-recipes-message">You have not created any recipes yet.</p>
+    {% endif %}
   </section>
+
 </section>
 
 {% endblock %}

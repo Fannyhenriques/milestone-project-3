@@ -73,9 +73,13 @@ MealFlow | {{ recipe.title }}
 		<section class="recipe-detail-section">
 			<h2>Instructions</h2>
 
-			<div class="instruction-text">
-				{{ recipe.instructions|linebreaks }}
-			</div>
+			<ol class="instruction-list">
+				{% for step in instruction_steps %}
+				<li>{{ step }}</li>
+				{% empty %}
+				<li>No instructions have been added.</li>
+				{% endfor %}
+			</ol>
 		</section>
 
 	</div>

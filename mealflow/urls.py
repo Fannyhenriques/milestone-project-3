@@ -27,6 +27,13 @@ urlpatterns = [
 
 
     path(
+        "create-recipe/",
+        views.create_recipe,
+        name="create_recipe",
+    ),
+
+
+    path(
         "logout/",
         auth_views.LogoutView.as_view(next_page="home"),
         name="logout",

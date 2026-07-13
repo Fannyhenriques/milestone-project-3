@@ -6,10 +6,17 @@ from . import views
 
 urlpatterns = [
     path("", views.home, name="home"),
+
     path(
         "recipe/<int:recipe_id>/",
         views.recipe_detail,
         name="recipe_detail",
+    ),
+
+    path(
+        "recipe/<int:recipe_id>/save/",
+        views.toggle_save_recipe,
+        name="toggle_save_recipe",
     ),
 
     path(

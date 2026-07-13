@@ -1,0 +1,40 @@
+{% extends "mealflow/base.html" %}
+
+{% block title %}
+MealFlow | Register
+{% endblock %}
+
+{% block content %}
+
+<section class="auth-container">
+  <h1>Create account</h1>
+
+  <form method="post" class="auth-form">
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    {% for field in form %}
+    <div class="form-group">
+      <label for="{{ field.id_for_label }}">
+        {{ field.label }}
+      </label>
+
+      {{ field }}
+
+      {{ field.errors }}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">
+      Register
+    </button>
+  </form>
+
+  <p>
+    Already have an account?
+    <a href="{% url 'login' %}">Log in here</a>
+  </p>
+</section>
+
+{% endblock %}

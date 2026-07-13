@@ -38,15 +38,27 @@ MealFlow | {{ recipe.title }}
 
 		{% if user.is_authenticated %}
 		<div class="recipe-detail-save">
-			<button type="button" class="btn btn-save">
-				<span aria-hidden="true">♡</span>
-				Save recipe
-			</button>
+			<form method="post" action="{% url 'toggle_save_recipe' recipe.id %}" id="save-recipe-form">
+				{% csrf_token %}
+
+				<button type="submit" class="btn btn-save" id="save-recipe-button">
+					<span class="save-heart" aria-hidden="true">
+						{% if is_saved %}♥{% else %}♡{% endif %}
+					</span>
+					<span class="save-button-text">
+						{% if is_saved %}Saved{% else %}Save recipe{% endif %}
+					</span>
+				</button>
+			</form>
+			<div class="save-toast" id="save-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
 		</div>
 		{% else %}
-		<p class="login-prompt">
-			<a href="{% url 'login' %}">Log in</a> to save this recipe.
-		</p>
+		<div class="recipe-detail-save">
+			<a href="{% url 'login' %}" class="btn btn-save">
+				<span aria-hidden="true">♡</span>
+				Log in to save recipe
+			</a>
+		</div>
 		{% endif %}
 
 	</section>

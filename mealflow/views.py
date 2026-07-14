@@ -1,6 +1,7 @@
 from .forms import RecipeForm
 from .models import Ingredient, Recipe, SavedRecipe
 from django.contrib.auth import login
+from django.contrib import messages
 from django.http import JsonResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -92,6 +93,11 @@ def create_recipe(request):
                         order=order,
                     )
 
+            messages.success(
+                request,
+                f'"{recipe.title}" was created successfully.',
+            )
+
             return redirect(
                 "recipe_detail",
                 recipe_id=recipe.id,
@@ -146,6 +152,11 @@ def edit_recipe(request, recipe_id):
                         order=order,
                     )
 
+            messages.success(
+                request,
+                f'Changes to "{recipe.title}" were saved successfully.',
+            )
+
             return redirect(
                 "recipe_detail",
                 recipe_id=recipe.id,
@@ -186,7 +197,14 @@ def delete_recipe(request, recipe_id):
     )
 
     if request.method == "POST":
+        recipe_title = recipe.title
         recipe.delete()
+
+        messages.success(
+            request,
+            f'"{recipe_title}" was deleted successfully.',
+        )
+
         return redirect("my_recipes")
 
     return redirect(

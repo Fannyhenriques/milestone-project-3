@@ -94,12 +94,13 @@ Welcome to MealFlow - your personal recipe collection.
 <section class="recipe-grid-section" aria-labelledby="recipe-grid-heading">
 	<h2 id="recipe-grid-heading">Recipes</h2>
 
-	<div class="recipe-grid">
-		{% for recipe in recipes %}
-		<a href="{% url 'recipe_detail' recipe.id %}" class="recipe-card">
-			<div class="recipe-card-image">
-				<img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
-			</div>
+  <div class="recipe-grid">
+    {% for recipe in recipes %}
+    <a href="{% url 'recipe_detail' recipe.id %}" class="recipe-card" data-title="{{ recipe.title|lower }}"
+      data-meal-type="{{ recipe.meal_type }}" data-food-category="{{ recipe.category.slug }}">
+      <div class="recipe-card-image">
+        <img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
+      </div>
 
 			<div class="recipe-card-content">
 				<h3 class="recipe-card-title">
@@ -116,6 +117,9 @@ Welcome to MealFlow - your personal recipe collection.
 		{% endfor %}
 	</div>
 
+  <p id="no-filter-results" class="empty-recipes-message" hidden>
+    No recipes match your search.
+  </p>
 
   <div class="btn-container">
     <button type="button" id="load-more-recipes" class="btn btn-primary" hidden>

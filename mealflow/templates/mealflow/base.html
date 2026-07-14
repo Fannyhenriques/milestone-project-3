@@ -59,16 +59,17 @@
   </header>
 
   <main id="main-content" class="main-content">
-    {% block content %}
     {% if messages %}
     <div class="message-container" aria-live="polite">
       {% for message in messages %}
-      <div class="site-message {{ message.tags }}">
+      <div class="save-toast site-message {{ message.tags }} show">
         {{ message }}
       </div>
       {% endfor %}
     </div>
     {% endif %}
+
+    {% block content %}
     {% endblock %}
   </main>
 

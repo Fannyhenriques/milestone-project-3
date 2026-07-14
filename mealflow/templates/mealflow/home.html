@@ -12,87 +12,87 @@ Welcome to MealFlow - your personal recipe collection.
 {% block content %}
 
 <section class="page-intro">
-	<h1>Welcome to MealFlow</h1>
+  <h1>Welcome to MealFlow</h1>
 
-	<h2>Your personal recipe collection.</h2>
+  <h2>Your personal recipe collection.</h2>
 </section>
 
 <section class="recipe-search-section" aria-labelledby="recipe-search-heading">
-	<h2 id="recipe-search-heading" class="visually-hidden">
-		Search and filter recipes
-	</h2>
+  <h2 id="recipe-search-heading" class="visually-hidden">
+    Search and filter recipes
+  </h2>
 
-	<form class="recipe-search-form" method="GET" action="">
-		<div class="search-field">
-			<label for="recipe-search" class="visually-hidden">
-				Search recipes
-			</label>
-			<input type="search" id="recipe-search" name="q" placeholder="Search recipe" autocomplete="off" minlength="2"
-				maxlength="75" spellcheck="false">
-		</div>
+  <form class="recipe-search-form" method="GET" action="">
+    <div class="search-field">
+      <label for="recipe-search" class="visually-hidden">
+        Search recipes
+      </label>
+      <input type="search" id="recipe-search" name="q" placeholder="Search recipe" autocomplete="off" minlength="2"
+        maxlength="75" spellcheck="false">
+    </div>
 
-		<fieldset class="filter-group">
-			<legend class="visually-hidden">Meal type</legend>
-			<div class="filter-options">
-				<label class="filter-pill">
-					<input type="checkbox" name="meal_type" value="breakfast">
-					<span>Breakfast</span>
-				</label>
+    <fieldset class="filter-group">
+      <legend class="visually-hidden">Meal type</legend>
+      <div class="filter-options">
+        <label class="filter-pill">
+          <input type="checkbox" name="meal_type" value="breakfast">
+          <span>Breakfast</span>
+        </label>
 
-				<label class="filter-pill">
-					<input type="checkbox" name="meal_type" value="lunch">
-					<span>Lunch</span>
-				</label>
+        <label class="filter-pill">
+          <input type="checkbox" name="meal_type" value="lunch">
+          <span>Lunch</span>
+        </label>
 
-				<label class="filter-pill">
-					<input type="checkbox" name="meal_type" value="dinner">
-					<span>Dinner</span>
-				</label>
+        <label class="filter-pill">
+          <input type="checkbox" name="meal_type" value="dinner">
+          <span>Dinner</span>
+        </label>
 
-				<label class="filter-pill">
-					<input type="checkbox" name="meal_type" value="dessert">
-					<span>Dessert</span>
-				</label>
-			</div>
-		</fieldset>
+        <label class="filter-pill">
+          <input type="checkbox" name="meal_type" value="dessert">
+          <span>Dessert</span>
+        </label>
+      </div>
+    </fieldset>
 
-		<fieldset class="filter-group">
-			<legend class="visually-hidden">Food category</legend>
-			<div class="filter-options">
-				<label class="filter-pill">
-					<input type="checkbox" name="food_category" value="vegetarian">
-					<span>Veg</span>
-				</label>
+    <fieldset class="filter-group">
+      <legend class="visually-hidden">Food category</legend>
+      <div class="filter-options">
+        <label class="filter-pill">
+          <input type="checkbox" name="food_category" value="vegetarian">
+          <span>Veg</span>
+        </label>
 
-				<label class="filter-pill">
-					<input type="checkbox" name="food_category" value="meat">
-					<span>Meat</span>
-				</label>
+        <label class="filter-pill">
+          <input type="checkbox" name="food_category" value="meat">
+          <span>Meat</span>
+        </label>
 
-				<label class="filter-pill">
-					<input type="checkbox" name="food_category" value="chicken">
-					<span>Chicken</span>
-				</label>
+        <label class="filter-pill">
+          <input type="checkbox" name="food_category" value="chicken">
+          <span>Chicken</span>
+        </label>
 
-				<label class="filter-pill">
-					<input type="checkbox" name="food_category" value="fish">
-					<span>Fish</span>
-				</label>
-			</div>
-		</fieldset>
-		<div class="btn-container">
-			<button type="submit" class="btn btn-primary">
-				Search
-			</button>
-			<button type="reset" class="btn btn-secondary">
-				Clear
-			</button>
-		</div>
-	</form>
+        <label class="filter-pill">
+          <input type="checkbox" name="food_category" value="fish">
+          <span>Fish</span>
+        </label>
+      </div>
+    </fieldset>
+    <div class="btn-container">
+      <button type="submit" class="btn btn-primary">
+        Search
+      </button>
+      <button type="reset" class="btn btn-secondary">
+        Clear
+      </button>
+    </div>
+  </form>
 </section>
 
 <section class="recipe-grid-section" aria-labelledby="recipe-grid-heading">
-	<h2 id="recipe-grid-heading">Recipes</h2>
+  <h2 id="recipe-grid-heading">Recipes</h2>
 
   <div class="recipe-grid">
     {% for recipe in recipes %}
@@ -102,20 +102,20 @@ Welcome to MealFlow - your personal recipe collection.
         <img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
       </div>
 
-			<div class="recipe-card-content">
-				<h3 class="recipe-card-title">
-					{{ recipe.title }}
-				</h3>
+      <div class="recipe-card-content">
+        <h3 class="recipe-card-title">
+          {{ recipe.title }}
+        </h3>
 
-				<p class="recipe-card-category">
-					{{ recipe.get_meal_type_display }} · {{ recipe.category.name }}
-				</p>
-			</div>
-		</a>
-		{% empty %}
-		<p>No recipes have been added yet.</p>
-		{% endfor %}
-	</div>
+        <p class="recipe-card-category">
+          {{ recipe.get_meal_type_display }} · {{ recipe.category.name }}
+        </p>
+      </div>
+    </a>
+    {% empty %}
+    <p>No recipes have been added yet.</p>
+    {% endfor %}
+  </div>
 
   <p id="no-filter-results" class="empty-recipes-message" hidden>
     No recipes match your search.

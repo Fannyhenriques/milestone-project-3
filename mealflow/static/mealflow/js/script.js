@@ -1,3 +1,13 @@
+function initSiteMessages() {
+  const siteMessages = document.querySelectorAll(".site-message");
+
+  siteMessages.forEach((message) => {
+    setTimeout(() => {
+      message.classList.remove("show");
+    }, 3000);
+  });
+}
+
 
 function initSaveRecipe() {
   const saveForm = document.querySelector("#save-recipe-form");
@@ -67,5 +77,6 @@ function initSaveRecipe() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  initSiteMessages();
   initSaveRecipe();
 });

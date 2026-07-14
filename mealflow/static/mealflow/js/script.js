@@ -1,3 +1,22 @@
+function initDeleteConfirmation() {
+  const deleteRecipeForm = document.querySelector(
+    "#delete-recipe-form"
+  );
+
+  if (!deleteRecipeForm) {
+    return;
+  }
+
+  deleteRecipeForm.addEventListener("submit", (event) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this recipe?"
+    );
+
+    if (!confirmed) {
+      event.preventDefault();
+    }
+  });
+}
 function initSiteMessages() {
   const siteMessages = document.querySelectorAll(".site-message");
 
@@ -77,6 +96,7 @@ function initSaveRecipe() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  initDeleteConfirmation();
   initSiteMessages();
   initSaveRecipe();
 });

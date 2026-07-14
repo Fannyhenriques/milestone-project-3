@@ -1,3 +1,27 @@
+function initHamburgerMenu() {
+  const menuButton = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector("#nav-links");
+
+  if (!menuButton || !navLinks) {
+    return;
+  }
+
+  menuButton.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("nav-open");
+
+    menuButton.setAttribute("aria-expanded", isOpen);
+    menuButton.setAttribute(
+      "aria-label",
+      isOpen
+        ? "Close navigation menu"
+        : "Open navigation menu"
+    );
+
+    menuButton.textContent = isOpen ? "✕" : "☰";
+  });
+}
+
+
 function initDeleteConfirmation() {
   const deleteRecipeForm = document.querySelector(
     "#delete-recipe-form"
@@ -96,6 +120,7 @@ function initSaveRecipe() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  initHamburgerMenu();
   initDeleteConfirmation();
   initSiteMessages();
   initSaveRecipe();

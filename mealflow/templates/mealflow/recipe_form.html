@@ -37,7 +37,7 @@ MealFlow | {{ page_title }}
   </form>
 
   {% if recipe %}
-  <form method="post" action="{% url 'delete_recipe' recipe.id %}" class="delete-recipe-form">
+  <form method="post" action="{% url 'delete_recipe' recipe.id %}" class="delete-recipe-form" id="delete-recipe-form">
     {% csrf_token %}
 
     <button type="submit" class="btn btn-danger">

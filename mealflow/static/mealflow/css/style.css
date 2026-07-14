@@ -103,8 +103,8 @@ img {
 ==================================== */
 
 .site-header {
-	padding: 1rem 0.5rem;
-	position: sticky;
+  padding: 1rem 0.5rem;
+  position: relative;
 }
 
 /* ====================================
@@ -112,9 +112,10 @@ img {
 ==================================== */
 
 .navbar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
 .site-logo {
@@ -134,12 +135,14 @@ img {
 }
 
 .nav-toggle {
-	display: block;
-	background: none;
-	border: none;
-	color: var(--color-primary);
-	font-size: 2rem;
-	cursor: pointer;
+  display: block;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
 }
 
 .nav-links {
@@ -166,6 +169,27 @@ img {
 .nav-link-button:focus-visible {
 	color: var(--color-secondary);
 	border-color: var(--color-secondary);
+}
+
+.nav-links.nav-open {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  margin: 0;
+  padding: 5rem 1.5rem 2rem;
+  list-style: none;
+
+  background-color: var(--color-surface);
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 12%);
+
 }
 
 /* ====================================

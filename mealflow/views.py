@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
 def home(request):
-    recipes = Recipe.objects.all()
+    recipes = Recipe.objects.all().order_by("created_at")
 
     context = {
         "recipes": recipes,
@@ -217,7 +217,7 @@ def delete_recipe(request, recipe_id):
 def my_recipes(request):
     saved_recipe_links = SavedRecipe.objects.filter(
         user=request.user
-    ).select_related("recipe")
+    ).select_related("recipe").order_by("-saved_at")
 
     saved_recipes = [
         saved_recipe.recipe
@@ -226,7 +226,7 @@ def my_recipes(request):
 
     created_recipes = Recipe.objects.filter(
         author=request.user
-    )
+    ).order_by("-created_at")
 
     context = {
         "saved_recipes": saved_recipes,

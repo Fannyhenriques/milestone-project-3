@@ -126,7 +126,7 @@ textarea {
   background: none;
   border: none;
   color: var(--color-primary);
-  font-size: 2rem;
+  font-size: 2.2rem;
   cursor: pointer;
   position: relative;
   z-index: 1001;
@@ -837,7 +837,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
   .filter-pill span {
     min-width: unset;
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 0.7rem;
   }
 }
 

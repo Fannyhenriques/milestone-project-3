@@ -214,11 +214,13 @@ img {
   align-items: center;
   gap: 1rem;
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .btn {
   border-radius: 999px;
-  width: 8rem;
+  border: 2px solid var(--color-primary);
+  width: 9rem;
   padding: 0.6rem 1rem;
   font-weight: var(--font-weight-bold);
   font-size: 1rem;
@@ -228,12 +230,60 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--color-primary);
+  font-family: inherit;
+  line-height: 1.2;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .btn:hover {
   background: var(--color-primary);
   color: var(--color-surface);
+}
 
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #be435c;
+  border: 2px solid #be435c;
+  color: #fff;
+  width: auto;
+  min-width: max-content;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+}
+
+.btn-action:hover,
+.btn-action:focus-visible {
+  border-color: #bc0202;
+  background-color: #bc0202;
+  color: #fff;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.btn-detail-footer {
+  border-color: var(--color-surface);
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  width: 11rem;
+  min-width: 11rem;
+}
+
+.btn-detail-footer:hover,
+.btn-detail-footer:focus-visible {
+  border-color: var(--color-surface);
+  color: var(--color-surface);
 }
 
 /* ====================================

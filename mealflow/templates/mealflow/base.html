@@ -42,6 +42,8 @@
 
         {% if user.is_authenticated %}
         <li><a href="{% url 'my_recipes' %}">My Recipes</a></li>
+        <li> <a href="{% url 'create_recipe' %}">Add Recipe</a>
+        </li>
         <li>
           <form method="post" action="{% url 'logout' %}" class="logout-form">
             {% csrf_token %}

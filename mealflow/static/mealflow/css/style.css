@@ -1,3 +1,6 @@
+/* ====================================
+   BASE
+==================================== */
 *,
 *::before,
 *::after {
@@ -14,7 +17,6 @@
   --color-secondary: #07bba0;
   --color-surface: #ffffff;
 
-
   --font-primary: "Mulish", sans-serif;
 
   --font-weight-semibold: 600;
@@ -27,12 +29,10 @@
 /* ====================================
    GLOBAL STYLES
 ==================================== */
-
 body {
   background-color: var(--color-background);
   font-family: var(--font-primary);
-  height: 100vh;
-  max-width: 100%;
+  min-height: 100vh;
   color: var(--color-primary);
   display: flex;
   flex-direction: column;
@@ -71,20 +71,20 @@ a {
   text-decoration: underline;
 }
 
-
-/* lists */
-/* images */
-
 img {
   max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
 /* ====================================
    LAYOUT
 ==================================== */
-
-/* containers */
-/* sections */
 .page-intro {
   text-align: center;
   display: flex;
@@ -96,18 +96,8 @@ img {
 }
 
 /* ====================================
-   HEADER
+   HEADER & NAVIGATION
 ==================================== */
-
-.site-header {
-  padding: 1rem 0.5rem;
-  position: relative;
-}
-
-/* ====================================
-   NAVIGATION
-==================================== */
-
 .navbar {
   display: flex;
   align-items: center;
@@ -152,7 +142,6 @@ img {
 
 .nav-link-button {
   padding: 0.2rem 0.5rem;
-  border: 0;
   background: transparent;
   color: inherit;
   font: inherit;
@@ -174,32 +163,16 @@ img {
   right: 0;
   left: 0;
   z-index: 1000;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-
   margin: 0;
   padding: 5rem 1.5rem 2rem;
   list-style: none;
-
   background-color: var(--color-surface);
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 12%);
-
   animation: open-mobile-nav 0.25s ease;
-}
-
-@keyframes open-mobile-nav {
-  from {
-    opacity: 0;
-    transform: translateY(-1rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* ====================================
@@ -262,13 +235,6 @@ img {
   color: #fff;
 }
 
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
 .btn-detail-footer {
   border-color: var(--color-surface);
   background-color: var(--color-surface);
@@ -284,9 +250,8 @@ textarea {
 }
 
 /* ====================================
-   FORMS
+   SEARCH AND FILTERS
 ==================================== */
-
 .recipe-search-section {
   width: min(90%, 700px);
   margin: 0.5rem auto;
@@ -324,8 +289,8 @@ textarea {
 }
 
 .search-field input:focus {
-  outline: none;
-  box-shadow: var(--color-primary);
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -393,9 +358,8 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* ====================================
-   FORMS login register
+   AUTHENTICATION FORMS
 ==================================== */
-
 .auth-container {
   width: min(100% - 2rem, 520px);
   margin: 2rem auto;
@@ -466,8 +430,22 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* ====================================
-   CARDS
+    RECIPE GRID & CARDS
 ==================================== */
+.recipe-grid-section {
+  width: min(90%, 1400px);
+  margin: 1rem auto;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.recipe-grid-section>h2 {
+  margin-bottom: 1.5rem;
+}
 
 .recipe-card {
   display: block;
@@ -508,9 +486,13 @@ input[type="search"]::-webkit-search-cancel-button {
   padding: 1.25rem;
 }
 
-.recipe-card-category {
-  font-size: 0.9rem;
-  font-weight: var(--font-weight-semibold);
+.recipe-card-content h3 {
+  display: -webkit-box;
+  min-height: 3rem;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .recipe-card-title {
@@ -519,39 +501,14 @@ input[type="search"]::-webkit-search-cancel-button {
   font-weight: var(--font-weight-bold);
 }
 
-/* ====================================
- GRID
-==================================== */
-
-.recipe-grid-section {
-  width: min(90%, 1400px);
-  margin: 1rem auto;
-}
-
-.recipe-grid-section>h2 {
-  margin-bottom: 1.5rem;
-}
-
-.recipe-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.recipe-card-content h3 {
-  display: -webkit-box;
-  min-height: 3rem;
-  overflow: hidden;
-  /* line-height: 1.7rem; */
-  overflow-wrap: anywhere;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+.recipe-card-category {
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
 }
 
 /* ====================================
- RECIPE DETAILS PAGE
+ RECIPE DETAILS 
 ==================================== */
-
 .recipe-detail-container {
   width: 100%;
   max-width: 900px;
@@ -626,8 +583,6 @@ input[type="search"]::-webkit-search-cancel-button {
   justify-content: center;
 }
 
-
-
 .recipe-detail-section+.recipe-detail-section {
   margin-top: 3rem;
 }
@@ -691,12 +646,15 @@ input[type="search"]::-webkit-search-cancel-button {
   gap: 1rem;
 }
 
+.ingredient-list li,
+.instruction-list li,
+.recipe-detail-description {
+  overflow-wrap: anywhere;
+}
+
 /* ====================================
-	CREATE RECIPE FORM PAGE - 
+	CREATE RECIPE FORM
 ==================================== */
-
-/* Recipe form */
-
 .recipe-form-container {
   width: min(100% - 2rem, 700px);
   margin: 2rem auto;
@@ -759,12 +717,6 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-top: 0.75rem;
 }
 
-.ingredient-list li,
-.instruction-list li,
-.recipe-detail-description {
-  overflow-wrap: anywhere;
-}
-
 .delete-recipe-form {
   display: flex;
   justify-content: center;
@@ -778,20 +730,51 @@ input[type="search"]::-webkit-search-cancel-button {
   font-size: 0.9rem;
 }
 
-/* saved recipes *************************************/
-
+/* ====================================
+   EMPTY STATES
+==================================== */
 .empty-recipes-message {
   margin: 1.5rem auto;
   text-align: center;
 }
 
 /* ====================================
+   MESSAGES & TOASTS
+==================================== */
+.save-toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 2rem;
+  z-index: 1000;
+
+  max-width: min(90vw, 320px);
+  padding: 0.9rem 1.1rem;
+
+  background-color: #fff;
+  color: var(--color-primary);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.4rem 1.5rem rgb(0 0 0 / 15%);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.save-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ====================================
    FOOTER
 ==================================== */
-
 .footer-container {
-  bottom: 0;
-  left: 0;
   padding: 1.5rem 2.5rem;
   background-color: var(--color-surface);
   width: 100%;
@@ -804,7 +787,6 @@ input[type="search"]::-webkit-search-cancel-button {
 /* ====================================
    UTILITIES
 ==================================== */
-
 .visually-hidden {
   position: absolute;
   left: -9999px;
@@ -818,13 +800,32 @@ input[type="search"]::-webkit-search-cancel-button {
   padding: 0.5rem 1rem;
 }
 
-/* active */
-/* hidden */
+.recipe-card[hidden] {
+  display: none;
+}
+
+#load-more-recipes[hidden] {
+  display: none;
+}
+
+/* ====================================
+   ANIMATIONS
+==================================== */
+@keyframes open-mobile-nav {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* ====================================
    MEDIA QUERIES
 ==================================== */
-
 @media screen and (min-width: 481px) {
   h1 {
     font-size: 2.3rem;
@@ -941,46 +942,4 @@ input[type="search"]::-webkit-search-cancel-button {
     box-shadow: none;
     animation: none;
   }
-}
-
-/* toast-popup */
-.save-toast {
-  position: fixed;
-  right: 1rem;
-  bottom: 2rem;
-  z-index: 1000;
-
-  max-width: min(90vw, 320px);
-  padding: 0.9rem 1.1rem;
-
-  background-color: #fff;
-  color: var(--color-primary);
-  border-left: 4px solid var(--color-secondary);
-  border-radius: 0.5rem;
-  box-shadow: 0 0.4rem 1.5rem rgb(0 0 0 / 15%);
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(1rem);
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    visibility 0.25s ease;
-}
-
-.save-toast.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-
-/* filtersearch */
-
-.recipe-card[hidden] {
-  display: none;
-}
-
-#load-more-recipes[hidden] {
-  display: none;
 }

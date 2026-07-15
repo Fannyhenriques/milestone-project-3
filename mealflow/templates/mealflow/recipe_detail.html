@@ -23,7 +23,7 @@ MealFlow | {{ recipe.title }}
     <img src="{% static recipe.image_path %}" alt="{{ recipe.title }}" width="1200" height="600" fetchpriority="high">
   </div>
 
-  <section class="recipe-info-card">
+  <div class="recipe-info-card">
     {% if recipe.description %}
     <p class="recipe-detail-description">
       {{ recipe.description }}
@@ -63,7 +63,7 @@ MealFlow | {{ recipe.title }}
     </div>
     {% endif %}
 
-  </section>
+  </div>
 
   <div class="recipe-content-card">
 

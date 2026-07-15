@@ -12,9 +12,7 @@ function initHamburgerMenu() {
     menuButton.setAttribute("aria-expanded", isOpen);
     menuButton.setAttribute(
       "aria-label",
-      isOpen
-        ? "Close navigation menu"
-        : "Open navigation menu"
+      isOpen ? "Close navigation menu" : "Open navigation menu"
     );
 
     menuButton.textContent = isOpen ? "✕" : "☰";
@@ -213,9 +211,7 @@ function initSaveRecipe() {
 
       const data = await response.json();
 
-      buttonText.textContent = data.is_saved
-        ? "Saved"
-        : "Save recipe";
+      buttonText.textContent = data.is_saved ? "Saved" : "Save recipe";
 
       heart.textContent = data.is_saved ? "♥" : "♡";
       feedback.textContent = data.message;

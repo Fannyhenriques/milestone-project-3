@@ -20,7 +20,7 @@ MealFlow | {{ recipe.title }}
   </header>
 
   <div class="recipe-detail-image">
-    <img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
+    <img src="{% static recipe.image_path %}" alt="{{ recipe.title }}" width="1200" height="600" fetchpriority="high">
   </div>
 
   <section class="recipe-info-card">

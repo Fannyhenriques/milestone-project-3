@@ -99,7 +99,7 @@ Welcome to MealFlow - your personal recipe collection.
     <a href="{% url 'recipe_detail' recipe.id %}" class="recipe-card" data-title="{{ recipe.title|lower }}"
       data-meal-type="{{ recipe.meal_type }}" data-food-category="{{ recipe.category.slug }}">
       <div class="recipe-card-image">
-        <img src="{% static recipe.image_path %}" alt="{{ recipe.title }}">
+        <img src="{% static recipe.image_path %}" alt="{{ recipe.title }}" loading="lazy" width="400" height="300">
       </div>
 
       <div class="recipe-card-content">

@@ -576,14 +576,15 @@ input[type="search"]::-webkit-search-cancel-button {
 .recipe-detail-image {
   width: 100%;
   max-height: 380px;
+  aspect-ratio: 2 / 1;
   overflow: hidden;
+  background-color: var(--color-secondary);
 }
 
 .recipe-detail-image img {
   display: block;
   width: 100%;
   height: 100%;
-  max-height: 380px;
   object-fit: cover;
 }
 

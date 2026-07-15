@@ -43,7 +43,7 @@ MealFlow | {{ recipe.title }}
       <form method="post" action="{% url 'toggle_save_recipe' recipe.id %}" id="save-recipe-form">
         {% csrf_token %}
 
-        <button type="submit" class="btn btn-save" id="save-recipe-button">
+        <button type="submit" class="btn btn-action" id="save-recipe-button">
           <span class="save-heart" aria-hidden="true">
             {% if is_saved %}♥{% else %}♡{% endif %}
           </span>
@@ -94,19 +94,17 @@ MealFlow | {{ recipe.title }}
         {% endfor %}
       </ol>
     </section>
-
   </div>
-
 </article>
 
 <div class="recipe-detail-footer">
   <div class="recipe-detail-footer-inner">
-    <a href="{% url 'home' %}" class="btn btn-secondary">
+    <a href="{% url 'home' %}" class="btn btn-detail-footer">
       ⬅ Back to recipes
     </a>
 
     {% if user.is_authenticated and recipe.author == user %}
-    <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-primary">
+    <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-detail-footer">
       Edit recipe
     </a>
     {% endif %}

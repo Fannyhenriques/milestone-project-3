@@ -26,11 +26,11 @@ MealFlow | {{ page_title }}
     {% endfor %}
 
     <div class="recipe-form-actions">
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn">
         {{ button_text }}
       </button>
 
-      <a href="{% url 'my_recipes' %}" class="btn btn-secondary">
+      <a href="{% url 'my_recipes' %}" class="btn">
         Cancel
       </a>
     </div>
@@ -40,7 +40,7 @@ MealFlow | {{ page_title }}
   <form method="post" action="{% url 'delete_recipe' recipe.id %}" class="delete-recipe-form" id="delete-recipe-form">
     {% csrf_token %}
 
-    <button type="submit" class="btn btn-danger">
+    <button type="submit" class="btn btn-action">
       Delete recipe
     </button>
   </form>

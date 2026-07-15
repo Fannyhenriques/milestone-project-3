@@ -7,38 +7,38 @@ MealFlow | Login
 {% block content %}
 
 <section class="auth-container">
-	<h1>Log in</h1>
+  <h1>Log in</h1>
 
-	<form method="post" class="auth-form">
-		{% csrf_token %}
+  <form method="post" class="auth-form">
+    {% csrf_token %}
 
-		{{ form.non_field_errors }}
+    {{ form.non_field_errors }}
 
-		<div class="form-group">
-			<label for="{{ form.username.id_for_label }}">
-				Username
-			</label>
-			{{ form.username }}
-			{{ form.username.errors }}
-		</div>
+    <div class="form-group">
+      <label for="{{ form.username.id_for_label }}">
+        Username
+      </label>
+      {{ form.username }}
+      {{ form.username.errors }}
+    </div>
 
-		<div class="form-group">
-			<label for="{{ form.password.id_for_label }}">
-				Password
-			</label>
-			{{ form.password }}
-			{{ form.password.errors }}
-		</div>
+    <div class="form-group">
+      <label for="{{ form.password.id_for_label }}">
+        Password
+      </label>
+      {{ form.password }}
+      {{ form.password.errors }}
+    </div>
 
     <button type="submit" class="btn">
       Log in
-		</button>
-	</form>
+    </button>
+  </form>
 
-	<p>
-		Don’t have an account?
-		<a href="{% url 'register' %}">Register here</a>
-	</p>
+  <p>
+    Don’t have an account?
+    <a href="{% url 'register' %}">Register here</a>
+  </p>
 </section>
 
 {% endblock %}

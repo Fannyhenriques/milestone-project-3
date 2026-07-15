@@ -1,1156 +1,913 @@
 [
-  {
-    "model": "mealflow.category",
-    "pk": 1,
-    "fields": {
-      "name": "Fish",
-      "slug": "fish",
-      "default_image": "mealflow/images/recipes/default-fish.jpg"
-    }
-  },
-  {
-    "model": "mealflow.category",
-    "pk": 2,
-    "fields": {
-      "name": "Vegetarian",
-      "slug": "vegetarian",
-      "default_image": "mealflow/images/recipes/default-veg.jpg"
-    }
-  },
-  {
-    "model": "mealflow.category",
-    "pk": 3,
-    "fields": {
-      "name": "Meat",
-      "slug": "meat",
-      "default_image": "mealflow/images/recipes/default-meat.jpg"
-    }
-  },
-  {
-    "model": "mealflow.category",
-    "pk": 4,
-    "fields": {
-      "name": "Dessert",
-      "slug": "dessert",
-      "default_image": "mealflow/images/recipes/default-dessert.jpg"
-    }
-  },
-  {
-    "model": "mealflow.category",
-    "pk": 5,
-    "fields": {
-      "name": "Chicken",
-      "slug": "chicken",
-      "default_image": "mealflow/images/recipes/default-chicken.jpg"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 1,
-    "fields": {
-      "author": 1,
-      "category": 1,
-      "title": "Salmon Bowl",
-      "description": "A quick, healthy and delicious salmon bowl packed with flavour. This balanced recipe is simple to prepare and perfect for a satisfying lunch or dinner.",
-      "instructions": "Cut the salmon into bite-sized pieces and place them in a large bowl.\r\n\r\nIn a separate bowl, mix together the sesame oil, honey, soy sauce, minced garlic, rice wine vinegar, sesame seeds, salt and pepper.\r\n\r\nPour the marinade over the salmon and mix until all pieces are evenly coated.\r\n\r\nLeave the salmon to marinate for at least 15 minutes.\r\n\r\nFinely slice the red cabbage.\r\n\r\nPeel the cucumber, remove the seeds and cut it into chunky pieces.\r\n\r\nSlice the spring onions and avocado.\r\n\r\nCook the rice according to the package instructions.\r\n\r\nFry the salmon pieces in a pan until cooked through and slightly crispy on the outside.\r\n\r\nIn the same pan, cook the bok choy until softened.\r\n\r\nDivide the rice between bowls and top with the salmon and bok choy. Garnish with spring onions, avocado and red cabbage.",
-      "meal_type": "dinner",
-      "servings": 4,
-      "cooking_time": 35,
-      "image_name": "salmon-bowl.jpg",
-      "created_at": "2026-07-10T19:50:04.945Z",
-      "updated_at": "2026-07-10T20:14:40.708Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 2,
-    "fields": {
-      "author": 1,
-      "category": 1,
-      "title": "Pasta Puttanesca",
-      "description": "A bold and flavourful Italian pasta dish with tomatoes, olives, capers and anchovies. Quick to prepare and perfect for an easy weeknight dinner.",
-      "instructions": "Bring a large pot of salted water to the boil and cook the spaghetti according to the package instructions.\r\n\r\nFinely chop the garlic and anchovy fillets.\r\n\r\nHeat the olive oil in a large frying pan over medium heat.\r\n\r\nAdd the garlic, anchovies and chilli flakes. Cook for a few minutes until the anchovies have dissolved and the garlic is fragrant.\r\n\r\nAdd the chopped tomatoes, olives and capers.\r\n\r\nLet the sauce simmer for 10–15 minutes, stirring occasionally.\r\n\r\nDrain the pasta, reserving a small amount of the pasta water.\r\n\r\nAdd the spaghetti to the sauce and toss until evenly coated. Add a little pasta water if the sauce is too thick.\r\n\r\nSeason with black pepper and salt if needed.\r\n\r\nServe topped with freshly chopped parsley.",
-      "meal_type": "dinner",
-      "servings": 4,
-      "cooking_time": 30,
-      "image_name": "pasta-puttanesca.jpg",
-      "created_at": "2026-07-10T20:22:50.092Z",
-      "updated_at": "2026-07-11T16:21:32.884Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 3,
-    "fields": {
-      "author": 1,
-      "category": 2,
-      "title": "Banana Pancakes with Fresh Berries",
-      "description": "Quick and naturally sweet banana pancakes made with just a few simple ingredients. Serve with fresh berries for an easy and satisfying breakfast.",
-      "instructions": "Peel the bananas and mash them in a large bowl until mostly smooth.\r\n\r\nAdd the eggs, cinnamon, vanilla extract and salt.\r\n\r\nWhisk until the ingredients are well combined.\r\n\r\nHeat a little butter or oil in a frying pan over medium heat.\r\n\r\nPour small portions of the batter into the pan.\r\n\r\nCook the pancakes for 2–3 minutes, or until the edges begin to set.\r\n\r\nCarefully turn the pancakes and cook for another 1–2 minutes.\r\n\r\nRepeat with the remaining batter.\r\n\r\nServe the banana pancakes warm with fresh berries.",
-      "meal_type": "breakfast",
-      "servings": 4,
-      "cooking_time": 20,
-      "image_name": "banana-pancakes.jpg",
-      "created_at": "2026-07-10T20:25:55.431Z",
-      "updated_at": "2026-07-12T18:12:44.733Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 4,
-    "fields": {
-      "author": 1,
-      "category": 2,
-      "title": "Tomato and Mozzarella Crostini",
-      "description": "A fresh and simple starter with toasted bread, juicy tomatoes and creamy mozzarella.",
-      "instructions": "Slice the baguette and place the slices on a baking tray.\r\n\r\nDrizzle with a little olive oil.\r\n\r\nToast in the oven until lightly golden.\r\n\r\nDice the tomatoes and mozzarella.\r\n\r\nMix the tomatoes and mozzarella with olive oil, salt and black pepper.\r\n\r\nSpoon the mixture onto the toasted bread.\r\n\r\nTop with fresh basil and serve immediately.",
-      "meal_type": "dinner",
-      "servings": 4,
-      "cooking_time": 15,
-      "image_name": "crostini.jpg",
-      "created_at": "2026-07-10T20:32:12.903Z",
-      "updated_at": "2026-07-11T16:56:49.118Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 5,
-    "fields": {
-      "author": 1,
-      "category": 4,
-      "title": "Quick Cheesecake Cups",
-      "description": "A quick and creamy no-bake cheesecake served in individual glasses with crushed biscuits and fresh berries.",
-      "instructions": "Crush the digestive biscuits into small crumbs.\r\n\r\nWhip the cream until soft peaks form.\r\n\r\nIn a separate bowl, mix the cream cheese and icing sugar until smooth.\r\n\r\nGently fold the whipped cream into the cream cheese mixture.\r\n\r\nDivide some of the biscuit crumbs between four glasses.\r\n\r\nAdd a layer of the cheesecake mixture.\r\n\r\nRepeat the layers if there is enough mixture.\r\n\r\nTop with fresh raspberries or sliced strawberries.\r\n\r\nChill until serving, or serve immediately.",
-      "meal_type": "dessert",
-      "servings": 4,
-      "cooking_time": 15,
-      "image_name": "cheesecake.jpg",
-      "created_at": "2026-07-10T20:37:15.601Z",
-      "updated_at": "2026-07-11T16:29:01.387Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 6,
-    "fields": {
-      "author": 1,
-      "category": 3,
-      "title": "Beef Tagliata",
-      "description": "A simple Italian classic with juicy grilled beef served on a bed of rocket, cherry tomatoes, toasted pine nuts and shaved Parmesan.",
-      "instructions": "Season the beef with salt and black pepper.\r\n\r\nGrill the beef over direct heat for about 2 minutes on each side, until nicely browned.\r\n\r\nMove the beef to indirect heat and continue cooking until the internal temperature reaches 53–58°C. Alternatively, fry the beef in a frying pan until it reaches the same temperature.\r\n\r\nRemove the beef from the heat and leave it to rest for at least 10 minutes.\r\n\r\nHalve the cherry tomatoes and arrange them on a serving platter with the rocket.\r\n\r\nSlice the beef thinly and place it on top of the salad.\r\n\r\nTop with shaved Parmesan and toasted pine nuts.\r\n\r\nDrizzle with olive oil and balsamic vinegar before serving.",
-      "meal_type": "dinner",
-      "servings": 4,
-      "cooking_time": 30,
-      "image_name": "beef-tagliata.jpg",
-      "created_at": "2026-07-10T21:04:21.684Z",
-      "updated_at": "2026-07-11T16:19:37.880Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 7,
-    "fields": {
-      "author": 1,
-      "category": 5,
-      "title": "Marry me chicken",
-      "description": "A creamy and flavourful chicken dish with garlic, sun-dried tomatoes, Parmesan and fresh basil. Easy to prepare and perfect for serving with rice or pasta.",
-      "instructions": "Cook the rice or pasta according to the package instructions.\r\n\r\nSeason the chicken fillets with salt and black pepper.\r\n\r\nCoat the chicken lightly in the flour.\r\n\r\nDrain the sun-dried tomatoes.\r\n\r\nHeat half of the olive oil in a large frying pan over medium-high heat.\r\n\r\nBrown the chicken on both sides, then transfer it to a plate.\r\n\r\nAdd the remaining olive oil to the same pan.\r\n\r\nAdd the minced garlic and sun-dried tomatoes and cook for 1 minute.\r\n\r\nStir in the chilli flakes, oregano and thyme.\r\n\r\nAdd the water, crumbled chicken stock cube, cream and grated Parmesan.\r\n\r\nBring the sauce to a gentle boil while stirring.\r\n\r\nReturn the chicken to the pan and simmer for about 15 minutes, turning occasionally, until the chicken is cooked through and reaches an internal temperature of 70°C.\r\n\r\nSlice the fresh basil and stir it into the sauce just before serving.\r\n\r\nServe the chicken with rice or pasta and top with extra grated Parmesan.",
-      "meal_type": "dinner",
-      "servings": 4,
-      "cooking_time": 35,
-      "image_name": "marry-me-chicken.jpg",
-      "created_at": "2026-07-11T17:22:57.795Z",
-      "updated_at": "2026-07-11T17:22:57.795Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 8,
-    "fields": {
-      "author": 1,
-      "category": 2,
-      "title": "Classic Scones",
-      "description": "Quick and easy homemade scones, perfect for a relaxed weekend breakfast or brunch. Best served warm with cheese, cream cheese or jam.",
-      "instructions": "Preheat the oven to 250°C.\r\n\r\nMix the flour, baking powder and salt in a large bowl.\r\n\r\nRub the butter or margarine into the flour mixture until it resembles coarse crumbs.\r\n\r\nAdd the milk and stir quickly until a sticky dough forms.\r\n\r\nLine a baking tray with baking paper.\r\n\r\nUsing wet hands or two spoons, divide the dough into eight small scones and place them on the tray.\r\n\r\nBake in the middle of the oven for 10–12 minutes, or until lightly golden.\r\n\r\nServe the scones warm with cheese, cream cheese or jam.",
-      "meal_type": "breakfast",
-      "servings": 4,
-      "cooking_time": 25,
-      "image_name": "scones.jpg",
-      "created_at": "2026-07-11T18:27:00.608Z",
-      "updated_at": "2026-07-11T18:27:00.608Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 30,
-    "fields": {
-      "author": 2,
-      "category": 5,
-      "title": "w",
-      "description": "w",
-      "instructions": "w",
-      "meal_type": "breakfast",
-      "servings": 4,
-      "cooking_time": 11,
-      "image_name": "",
-      "created_at": "2026-07-15T09:53:48.427Z",
-      "updated_at": "2026-07-15T09:53:48.427Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 31,
-    "fields": {
-      "author": 2,
-      "category": 5,
-      "title": "s",
-      "description": "s",
-      "instructions": "s",
-      "meal_type": "breakfast",
-      "servings": 4,
-      "cooking_time": 11,
-      "image_name": "",
-      "created_at": "2026-07-15T10:18:06.395Z",
-      "updated_at": "2026-07-15T10:18:06.395Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 32,
-    "fields": {
-      "author": 2,
-      "category": 4,
-      "title": "1",
-      "description": "1",
-      "instructions": "1",
-      "meal_type": "lunch",
-      "servings": 4,
-      "cooking_time": 1,
-      "image_name": "",
-      "created_at": "2026-07-15T11:38:10.600Z",
-      "updated_at": "2026-07-15T11:38:10.600Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 33,
-    "fields": {
-      "author": 2,
-      "category": 4,
-      "title": "1",
-      "description": "1",
-      "instructions": "1",
-      "meal_type": "dinner",
-      "servings": 4,
-      "cooking_time": 1,
-      "image_name": "",
-      "created_at": "2026-07-15T11:38:32.377Z",
-      "updated_at": "2026-07-15T11:38:32.377Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 34,
-    "fields": {
-      "author": 2,
-      "category": 4,
-      "title": "1",
-      "description": "1",
-      "instructions": "11",
-      "meal_type": "lunch",
-      "servings": 4,
-      "cooking_time": 1,
-      "image_name": "",
-      "created_at": "2026-07-15T11:38:53.484Z",
-      "updated_at": "2026-07-15T11:38:53.484Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 35,
-    "fields": {
-      "author": 2,
-      "category": 1,
-      "title": "1",
-      "description": "1",
-      "instructions": "1",
-      "meal_type": "lunch",
-      "servings": 4,
-      "cooking_time": 1,
-      "image_name": "",
-      "created_at": "2026-07-15T11:39:21.760Z",
-      "updated_at": "2026-07-15T11:39:21.760Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 36,
-    "fields": {
-      "author": 2,
-      "category": 1,
-      "title": "1",
-      "description": "1",
-      "instructions": "1",
-      "meal_type": "dessert",
-      "servings": 4,
-      "cooking_time": 1,
-      "image_name": "",
-      "created_at": "2026-07-15T11:39:39.227Z",
-      "updated_at": "2026-07-15T11:39:39.227Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 37,
-    "fields": {
-      "author": 2,
-      "category": 4,
-      "title": "1",
-      "description": "1",
-      "instructions": "1",
-      "meal_type": "breakfast",
-      "servings": 4,
-      "cooking_time": 1,
-      "image_name": "",
-      "created_at": "2026-07-15T11:39:59.459Z",
-      "updated_at": "2026-07-15T11:39:59.459Z"
-    }
-  },
-  {
-    "model": "mealflow.recipe",
-    "pk": 38,
-    "fields": {
-      "author": 2,
-      "category": 3,
-      "title": "1",
-      "description": "1",
-      "instructions": "1",
-      "meal_type": "dinner",
-      "servings": 4,
-      "cooking_time": 1,
-      "image_name": "",
-      "created_at": "2026-07-15T11:40:20.299Z",
-      "updated_at": "2026-07-15T11:40:20.299Z"
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 1,
-    "fields": {
-      "recipe": 1,
-      "quantity": "560 g",
-      "name": "Salmon",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 2,
-    "fields": {
-      "recipe": 1,
-      "quantity": "200 g",
-      "name": "Bokchoy",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 3,
-    "fields": {
-      "recipe": 1,
-      "quantity": "1 cup",
-      "name": "Red cabbage, finely sliced",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 4,
-    "fields": {
-      "recipe": 1,
-      "quantity": "2-3",
-      "name": "Spring onions",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 5,
-    "fields": {
-      "recipe": 1,
-      "quantity": "2",
-      "name": "Avocado",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 6,
-    "fields": {
-      "recipe": 1,
-      "quantity": "125 g",
-      "name": "White rice",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 7,
-    "fields": {
-      "recipe": 1,
-      "quantity": "1 tbsp",
-      "name": "Sesame oil",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 8,
-    "fields": {
-      "recipe": 1,
-      "quantity": "3 tbsp",
-      "name": "Honey",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 9,
-    "fields": {
-      "recipe": 1,
-      "quantity": "2 tbsp",
-      "name": "Soy sauce",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 10,
-    "fields": {
-      "recipe": 1,
-      "quantity": "2",
-      "name": "Cloves Garlic, minced",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 11,
-    "fields": {
-      "recipe": 1,
-      "quantity": "1 tbsp",
-      "name": "Rice wine vinegar",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 12,
-    "fields": {
-      "recipe": 1,
-      "quantity": "2 cups",
-      "name": "Sesame seeds",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 13,
-    "fields": {
-      "recipe": 2,
-      "quantity": "400 g",
-      "name": "spaghetti",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 14,
-    "fields": {
-      "recipe": 2,
-      "quantity": "2 tbsp",
-      "name": "Olive oil",
-      "order": 2
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 15,
-    "fields": {
-      "recipe": 2,
-      "quantity": "3",
-      "name": "Garlic cloves",
-      "order": 3
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 16,
-    "fields": {
-      "recipe": 2,
-      "quantity": "4",
-      "name": "Anchovy fillets",
-      "order": 4
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 17,
-    "fields": {
-      "recipe": 2,
-      "quantity": "1/2 tbsp",
-      "name": "Chilli flakes",
-      "order": 5
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 18,
-    "fields": {
-      "recipe": 2,
-      "quantity": "400 g",
-      "name": "Chopped tomatoes",
-      "order": 6
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 19,
-    "fields": {
-      "recipe": 2,
-      "quantity": "100 g",
-      "name": "Black olives",
-      "order": 7
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 20,
-    "fields": {
-      "recipe": 2,
-      "quantity": "1 tbsp",
-      "name": "capers",
-      "order": 8
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 21,
-    "fields": {
-      "recipe": 2,
-      "quantity": "1 handful",
-      "name": "Fresh parsley",
-      "order": 9
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 22,
-    "fields": {
-      "recipe": 2,
-      "quantity": "",
-      "name": "Salt",
-      "order": 10
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 23,
-    "fields": {
-      "recipe": 2,
-      "quantity": "",
-      "name": "Pepper",
-      "order": 11
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 31,
-    "fields": {
-      "recipe": 4,
-      "quantity": "1",
-      "name": "baguette",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 32,
-    "fields": {
-      "recipe": 4,
-      "quantity": "2",
-      "name": "large tomatoes",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 33,
-    "fields": {
-      "recipe": 4,
-      "quantity": "125 g",
-      "name": "mozzarella",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 34,
-    "fields": {
-      "recipe": 4,
-      "quantity": "1 tbsp",
-      "name": "olive oil",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 35,
-    "fields": {
-      "recipe": 4,
-      "quantity": "",
-      "name": "Fresh basil",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 36,
-    "fields": {
-      "recipe": 4,
-      "quantity": "",
-      "name": "Salt",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 37,
-    "fields": {
-      "recipe": 4,
-      "quantity": "",
-      "name": "Black pepper",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 38,
-    "fields": {
-      "recipe": 5,
-      "quantity": "8",
-      "name": "digestive biscuits",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 39,
-    "fields": {
-      "recipe": 5,
-      "quantity": "200 g",
-      "name": "cream cheese",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 40,
-    "fields": {
-      "recipe": 5,
-      "quantity": "200 ml",
-      "name": "whipping cream",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 41,
-    "fields": {
-      "recipe": 5,
-      "quantity": "2 tbsp",
-      "name": "icing sugar",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 42,
-    "fields": {
-      "recipe": 5,
-      "quantity": "150 g",
-      "name": "fresh raspberries or strawberries",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 43,
-    "fields": {
-      "recipe": 6,
-      "quantity": "600 g",
-      "name": "beef steak or flank steak",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 44,
-    "fields": {
-      "recipe": 6,
-      "quantity": "1 tsp",
-      "name": "salt",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 45,
-    "fields": {
-      "recipe": 6,
-      "quantity": "1/2 tsp",
-      "name": "black pepper",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 46,
-    "fields": {
-      "recipe": 6,
-      "quantity": "250 g",
-      "name": "cherry tomatoes",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 47,
-    "fields": {
-      "recipe": 6,
-      "quantity": "65 g",
-      "name": "arugula",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 48,
-    "fields": {
-      "recipe": 6,
-      "quantity": "100 ml",
-      "name": "shaved Parmesan",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 49,
-    "fields": {
-      "recipe": 6,
-      "quantity": "50 ml",
-      "name": "toasted pine nuts",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 50,
-    "fields": {
-      "recipe": 6,
-      "quantity": "3-4 tbsp",
-      "name": "balsamic vinegar",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 51,
-    "fields": {
-      "recipe": 6,
-      "quantity": "1 tbsp",
-      "name": "olive oil",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 52,
-    "fields": {
-      "recipe": 7,
-      "quantity": "4 portions",
-      "name": "rice or pasta",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 53,
-    "fields": {
-      "recipe": 7,
-      "quantity": "600 g",
-      "name": "chicken breast fillets",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 54,
-    "fields": {
-      "recipe": 7,
-      "quantity": "",
-      "name": "salt",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 55,
-    "fields": {
-      "recipe": 7,
-      "quantity": "",
-      "name": "black pepper",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 56,
-    "fields": {
-      "recipe": 7,
-      "quantity": "50 ml",
-      "name": "plain flour",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 57,
-    "fields": {
-      "recipe": 7,
-      "quantity": "200 g",
-      "name": "sliced sun-dried tomatoes",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 58,
-    "fields": {
-      "recipe": 7,
-      "quantity": "2 tbsp",
-      "name": "olive oil",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 59,
-    "fields": {
-      "recipe": 7,
-      "quantity": "2",
-      "name": "garlic cloves",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 60,
-    "fields": {
-      "recipe": 7,
-      "quantity": "1 pinch",
-      "name": "chilli flakes",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 61,
-    "fields": {
-      "recipe": 7,
-      "quantity": "1/2 tsp",
-      "name": "dried oregano",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 62,
-    "fields": {
-      "recipe": 7,
-      "quantity": "1/2 tsp",
-      "name": "dried thyme",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 63,
-    "fields": {
-      "recipe": 7,
-      "quantity": "1/2",
-      "name": "chicken stock cube",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 64,
-    "fields": {
-      "recipe": 7,
-      "quantity": "250 ml",
-      "name": "water",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 65,
-    "fields": {
-      "recipe": 7,
-      "quantity": "250 ml",
-      "name": "whipping cream",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 66,
-    "fields": {
-      "recipe": 7,
-      "quantity": "150 ml",
-      "name": "grated Parmesan",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 67,
-    "fields": {
-      "recipe": 7,
-      "quantity": "1 handful",
-      "name": "fresh basil",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 68,
-    "fields": {
-      "recipe": 7,
-      "quantity": "",
-      "name": "Extra Parmesan for serving",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 69,
-    "fields": {
-      "recipe": 8,
-      "quantity": "400 ml",
-      "name": "ml plain flour",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 70,
-    "fields": {
-      "recipe": 8,
-      "quantity": "2 tsp",
-      "name": "baking powder",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 71,
-    "fields": {
-      "recipe": 8,
-      "quantity": "2 pinches",
-      "name": "pinches salt",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 72,
-    "fields": {
-      "recipe": 8,
-      "quantity": "50 g",
-      "name": "butter or margarine",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 73,
-    "fields": {
-      "recipe": 8,
-      "quantity": "200 ml",
-      "name": "milk",
-      "order": 0
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 96,
-    "fields": {
-      "recipe": 3,
-      "quantity": "",
-      "name": "ripe bananas",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 97,
-    "fields": {
-      "recipe": 3,
-      "quantity": "",
-      "name": "eggs",
-      "order": 2
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 98,
-    "fields": {
-      "recipe": 3,
-      "quantity": "",
-      "name": "ground cinnamon",
-      "order": 3
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 99,
-    "fields": {
-      "recipe": 3,
-      "quantity": "",
-      "name": "vanilla extract",
-      "order": 4
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 100,
-    "fields": {
-      "recipe": 3,
-      "quantity": "",
-      "name": "salt",
-      "order": 5
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 101,
-    "fields": {
-      "recipe": 3,
-      "quantity": "",
-      "name": "butter or neutral oil",
-      "order": 6
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 102,
-    "fields": {
-      "recipe": 3,
-      "quantity": "",
-      "name": "fresh berries",
-      "order": 7
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 145,
-    "fields": {
-      "recipe": 30,
-      "quantity": "",
-      "name": "w",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 146,
-    "fields": {
-      "recipe": 31,
-      "quantity": "",
-      "name": "s",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 147,
-    "fields": {
-      "recipe": 32,
-      "quantity": "",
-      "name": "1",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 148,
-    "fields": {
-      "recipe": 33,
-      "quantity": "",
-      "name": "1",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 149,
-    "fields": {
-      "recipe": 34,
-      "quantity": "",
-      "name": "1",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 150,
-    "fields": {
-      "recipe": 35,
-      "quantity": "",
-      "name": "1",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 151,
-    "fields": {
-      "recipe": 36,
-      "quantity": "",
-      "name": "1",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 152,
-    "fields": {
-      "recipe": 37,
-      "quantity": "",
-      "name": "1",
-      "order": 1
-    }
-  },
-  {
-    "model": "mealflow.ingredient",
-    "pk": 153,
-    "fields": {
-      "recipe": 38,
-      "quantity": "",
-      "name": "1",
-      "order": 1
-    }
+{
+  "model": "mealflow.category",
+  "pk": 5,
+  "fields": {
+    "name": "Chicken",
+    "slug": "chicken",
+    "default_image": "mealflow/images/recipes/default-chicken.jpg"
   }
+},
+{
+  "model": "mealflow.category",
+  "pk": 4,
+  "fields": {
+    "name": "Dessert",
+    "slug": "dessert",
+    "default_image": "mealflow/images/recipes/default-dessert.jpg"
+  }
+},
+{
+  "model": "mealflow.category",
+  "pk": 1,
+  "fields": {
+    "name": "Fish",
+    "slug": "fish",
+    "default_image": "mealflow/images/recipes/default-fish.jpg"
+  }
+},
+{
+  "model": "mealflow.category",
+  "pk": 3,
+  "fields": {
+    "name": "Meat",
+    "slug": "meat",
+    "default_image": "mealflow/images/recipes/default-meat.jpg"
+  }
+},
+{
+  "model": "mealflow.category",
+  "pk": 2,
+  "fields": {
+    "name": "Vegetarian",
+    "slug": "vegetarian",
+    "default_image": "mealflow/images/recipes/default-veg.jpg"
+  }
+},
+{
+  "model": "mealflow.recipe",
+  "pk": 8,
+  "fields": {
+    "author": 1,
+    "category": 2,
+    "title": "Classic Scones",
+    "description": "Quick and easy homemade scones, perfect for a relaxed weekend breakfast or brunch. Best served warm with cheese, cream cheese or jam.",
+    "instructions": "Preheat the oven to 250°C.\r\n\r\nMix the flour, baking powder and salt in a large bowl.\r\n\r\nRub the butter or margarine into the flour mixture until it resembles coarse crumbs.\r\n\r\nAdd the milk and stir quickly until a sticky dough forms.\r\n\r\nLine a baking tray with baking paper.\r\n\r\nUsing wet hands or two spoons, divide the dough into eight small scones and place them on the tray.\r\n\r\nBake in the middle of the oven for 10–12 minutes, or until lightly golden.\r\n\r\nServe the scones warm with cheese, cream cheese or jam.",
+    "meal_type": "breakfast",
+    "servings": 4,
+    "cooking_time": 25,
+    "image_name": "scones.jpg",
+    "created_at": "2026-07-11T18:27:00.608Z",
+    "updated_at": "2026-07-11T18:27:00.608Z"
+  }
+},
+{
+  "model": "mealflow.recipe",
+  "pk": 7,
+  "fields": {
+    "author": 1,
+    "category": 5,
+    "title": "Marry me chicken",
+    "description": "A creamy and flavourful chicken dish with garlic, sun-dried tomatoes, Parmesan and fresh basil. Easy to prepare and perfect for serving with rice or pasta.",
+    "instructions": "Cook the rice or pasta according to the package instructions.\r\n\r\nSeason the chicken fillets with salt and black pepper.\r\n\r\nCoat the chicken lightly in the flour.\r\n\r\nDrain the sun-dried tomatoes.\r\n\r\nHeat half of the olive oil in a large frying pan over medium-high heat.\r\n\r\nBrown the chicken on both sides, then transfer it to a plate.\r\n\r\nAdd the remaining olive oil to the same pan.\r\n\r\nAdd the minced garlic and sun-dried tomatoes and cook for 1 minute.\r\n\r\nStir in the chilli flakes, oregano and thyme.\r\n\r\nAdd the water, crumbled chicken stock cube, cream and grated Parmesan.\r\n\r\nBring the sauce to a gentle boil while stirring.\r\n\r\nReturn the chicken to the pan and simmer for about 15 minutes, turning occasionally, until the chicken is cooked through and reaches an internal temperature of 70°C.\r\n\r\nSlice the fresh basil and stir it into the sauce just before serving.\r\n\r\nServe the chicken with rice or pasta and top with extra grated Parmesan.",
+    "meal_type": "dinner",
+    "servings": 4,
+    "cooking_time": 35,
+    "image_name": "marry-me-chicken.jpg",
+    "created_at": "2026-07-11T17:22:57.795Z",
+    "updated_at": "2026-07-11T17:22:57.795Z"
+  }
+},
+{
+  "model": "mealflow.recipe",
+  "pk": 6,
+  "fields": {
+    "author": 1,
+    "category": 3,
+    "title": "Beef Tagliata",
+    "description": "A simple Italian classic with juicy grilled beef served on a bed of rocket, cherry tomatoes, toasted pine nuts and shaved Parmesan.",
+    "instructions": "Season the beef with salt and black pepper.\r\n\r\nGrill the beef over direct heat for about 2 minutes on each side, until nicely browned.\r\n\r\nMove the beef to indirect heat and continue cooking until the internal temperature reaches 53–58°C. Alternatively, fry the beef in a frying pan until it reaches the same temperature.\r\n\r\nRemove the beef from the heat and leave it to rest for at least 10 minutes.\r\n\r\nHalve the cherry tomatoes and arrange them on a serving platter with the rocket.\r\n\r\nSlice the beef thinly and place it on top of the salad.\r\n\r\nTop with shaved Parmesan and toasted pine nuts.\r\n\r\nDrizzle with olive oil and balsamic vinegar before serving.",
+    "meal_type": "dinner",
+    "servings": 4,
+    "cooking_time": 30,
+    "image_name": "beef-tagliata.jpg",
+    "created_at": "2026-07-10T21:04:21.684Z",
+    "updated_at": "2026-07-11T16:19:37.880Z"
+  }
+},
+{
+  "model": "mealflow.recipe",
+  "pk": 5,
+  "fields": {
+    "author": 1,
+    "category": 4,
+    "title": "Quick Cheesecake Cups",
+    "description": "A quick and creamy no-bake cheesecake served in individual glasses with crushed biscuits and fresh berries.",
+    "instructions": "Crush the digestive biscuits into small crumbs.\r\n\r\nWhip the cream until soft peaks form.\r\n\r\nIn a separate bowl, mix the cream cheese and icing sugar until smooth.\r\n\r\nGently fold the whipped cream into the cream cheese mixture.\r\n\r\nDivide some of the biscuit crumbs between four glasses.\r\n\r\nAdd a layer of the cheesecake mixture.\r\n\r\nRepeat the layers if there is enough mixture.\r\n\r\nTop with fresh raspberries or sliced strawberries.\r\n\r\nChill until serving, or serve immediately.",
+    "meal_type": "dessert",
+    "servings": 4,
+    "cooking_time": 15,
+    "image_name": "cheesecake.jpg",
+    "created_at": "2026-07-10T20:37:15.601Z",
+    "updated_at": "2026-07-11T16:29:01.387Z"
+  }
+},
+{
+  "model": "mealflow.recipe",
+  "pk": 4,
+  "fields": {
+    "author": 1,
+    "category": 2,
+    "title": "Tomato and Mozzarella Crostini",
+    "description": "A fresh and simple starter with toasted bread, juicy tomatoes and creamy mozzarella.",
+    "instructions": "Slice the baguette and place the slices on a baking tray.\r\n\r\nDrizzle with a little olive oil.\r\n\r\nToast in the oven until lightly golden.\r\n\r\nDice the tomatoes and mozzarella.\r\n\r\nMix the tomatoes and mozzarella with olive oil, salt and black pepper.\r\n\r\nSpoon the mixture onto the toasted bread.\r\n\r\nTop with fresh basil and serve immediately.",
+    "meal_type": "dinner",
+    "servings": 4,
+    "cooking_time": 15,
+    "image_name": "crostini.jpg",
+    "created_at": "2026-07-10T20:32:12.903Z",
+    "updated_at": "2026-07-11T16:56:49.118Z"
+  }
+},
+{
+  "model": "mealflow.recipe",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "category": 2,
+    "title": "Banana Pancakes with Fresh Berries",
+    "description": "Quick and naturally sweet banana pancakes made with just a few simple ingredients. Serve with fresh berries for an easy and satisfying breakfast.",
+    "instructions": "Peel the bananas and mash them in a large bowl until mostly smooth.\r\n\r\nAdd the eggs, cinnamon, vanilla extract and salt.\r\n\r\nWhisk until the ingredients are well combined.\r\n\r\nHeat a little butter or oil in a frying pan over medium heat.\r\n\r\nPour small portions of the batter into the pan.\r\n\r\nCook the pancakes for 2–3 minutes, or until the edges begin to set.\r\n\r\nCarefully turn the pancakes and cook for another 1–2 minutes.\r\n\r\nRepeat with the remaining batter.\r\n\r\nServe the banana pancakes warm with fresh berries.",
+    "meal_type": "breakfast",
+    "servings": 4,
+    "cooking_time": 20,
+    "image_name": "banana-pancakes.jpg",
+    "created_at": "2026-07-10T20:25:55.431Z",
+    "updated_at": "2026-07-12T18:12:44.733Z"
+  }
+},
+{
+  "model": "mealflow.recipe",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "category": 1,
+    "title": "Pasta Puttanesca",
+    "description": "A bold and flavourful Italian pasta dish with tomatoes, olives, capers and anchovies. Quick to prepare and perfect for an easy weeknight dinner.",
+    "instructions": "Bring a large pot of salted water to the boil and cook the spaghetti according to the package instructions.\r\n\r\nFinely chop the garlic and anchovy fillets.\r\n\r\nHeat the olive oil in a large frying pan over medium heat.\r\n\r\nAdd the garlic, anchovies and chilli flakes. Cook for a few minutes until the anchovies have dissolved and the garlic is fragrant.\r\n\r\nAdd the chopped tomatoes, olives and capers.\r\n\r\nLet the sauce simmer for 10–15 minutes, stirring occasionally.\r\n\r\nDrain the pasta, reserving a small amount of the pasta water.\r\n\r\nAdd the spaghetti to the sauce and toss until evenly coated. Add a little pasta water if the sauce is too thick.\r\n\r\nSeason with black pepper and salt if needed.\r\n\r\nServe topped with freshly chopped parsley.",
+    "meal_type": "dinner",
+    "servings": 4,
+    "cooking_time": 30,
+    "image_name": "pasta-puttanesca.jpg",
+    "created_at": "2026-07-10T20:22:50.092Z",
+    "updated_at": "2026-07-11T16:21:32.884Z"
+  }
+},
+{
+  "model": "mealflow.recipe",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "category": 1,
+    "title": "Salmon Bowl",
+    "description": "A quick, healthy and delicious salmon bowl packed with flavour. This balanced recipe is simple to prepare and perfect for a satisfying lunch or dinner.",
+    "instructions": "Cut the salmon into bite-sized pieces and place them in a large bowl.\r\n\r\nIn a separate bowl, mix together the sesame oil, honey, soy sauce, minced garlic, rice wine vinegar, sesame seeds, salt and pepper.\r\n\r\nPour the marinade over the salmon and mix until all pieces are evenly coated.\r\n\r\nLeave the salmon to marinate for at least 15 minutes.\r\n\r\nFinely slice the red cabbage.\r\n\r\nPeel the cucumber, remove the seeds and cut it into chunky pieces.\r\n\r\nSlice the spring onions and avocado.\r\n\r\nCook the rice according to the package instructions.\r\n\r\nFry the salmon pieces in a pan until cooked through and slightly crispy on the outside.\r\n\r\nIn the same pan, cook the bok choy until softened.\r\n\r\nDivide the rice between bowls and top with the salmon and bok choy. Garnish with spring onions, avocado and red cabbage.",
+    "meal_type": "dinner",
+    "servings": 4,
+    "cooking_time": 35,
+    "image_name": "salmon-bowl.jpg",
+    "created_at": "2026-07-10T19:50:04.945Z",
+    "updated_at": "2026-07-10T20:14:40.708Z"
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 1,
+  "fields": {
+    "recipe": 1,
+    "quantity": "560 g",
+    "name": "Salmon",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 2,
+  "fields": {
+    "recipe": 1,
+    "quantity": "200 g",
+    "name": "Bokchoy",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 3,
+  "fields": {
+    "recipe": 1,
+    "quantity": "1 cup",
+    "name": "Red cabbage, finely sliced",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 4,
+  "fields": {
+    "recipe": 1,
+    "quantity": "2-3",
+    "name": "Spring onions",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 5,
+  "fields": {
+    "recipe": 1,
+    "quantity": "2",
+    "name": "Avocado",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 6,
+  "fields": {
+    "recipe": 1,
+    "quantity": "125 g",
+    "name": "White rice",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 7,
+  "fields": {
+    "recipe": 1,
+    "quantity": "1 tbsp",
+    "name": "Sesame oil",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 8,
+  "fields": {
+    "recipe": 1,
+    "quantity": "3 tbsp",
+    "name": "Honey",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 9,
+  "fields": {
+    "recipe": 1,
+    "quantity": "2 tbsp",
+    "name": "Soy sauce",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 10,
+  "fields": {
+    "recipe": 1,
+    "quantity": "2",
+    "name": "Cloves Garlic, minced",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 11,
+  "fields": {
+    "recipe": 1,
+    "quantity": "1 tbsp",
+    "name": "Rice wine vinegar",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 12,
+  "fields": {
+    "recipe": 1,
+    "quantity": "2 cups",
+    "name": "Sesame seeds",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 31,
+  "fields": {
+    "recipe": 4,
+    "quantity": "1",
+    "name": "baguette",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 32,
+  "fields": {
+    "recipe": 4,
+    "quantity": "2",
+    "name": "large tomatoes",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 33,
+  "fields": {
+    "recipe": 4,
+    "quantity": "125 g",
+    "name": "mozzarella",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 34,
+  "fields": {
+    "recipe": 4,
+    "quantity": "1 tbsp",
+    "name": "olive oil",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 35,
+  "fields": {
+    "recipe": 4,
+    "quantity": "",
+    "name": "Fresh basil",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 36,
+  "fields": {
+    "recipe": 4,
+    "quantity": "",
+    "name": "Salt",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 37,
+  "fields": {
+    "recipe": 4,
+    "quantity": "",
+    "name": "Black pepper",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 38,
+  "fields": {
+    "recipe": 5,
+    "quantity": "8",
+    "name": "digestive biscuits",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 39,
+  "fields": {
+    "recipe": 5,
+    "quantity": "200 g",
+    "name": "cream cheese",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 40,
+  "fields": {
+    "recipe": 5,
+    "quantity": "200 ml",
+    "name": "whipping cream",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 41,
+  "fields": {
+    "recipe": 5,
+    "quantity": "2 tbsp",
+    "name": "icing sugar",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 42,
+  "fields": {
+    "recipe": 5,
+    "quantity": "150 g",
+    "name": "fresh raspberries or strawberries",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 43,
+  "fields": {
+    "recipe": 6,
+    "quantity": "600 g",
+    "name": "beef steak or flank steak",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 44,
+  "fields": {
+    "recipe": 6,
+    "quantity": "1 tsp",
+    "name": "salt",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 45,
+  "fields": {
+    "recipe": 6,
+    "quantity": "1/2 tsp",
+    "name": "black pepper",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 46,
+  "fields": {
+    "recipe": 6,
+    "quantity": "250 g",
+    "name": "cherry tomatoes",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 47,
+  "fields": {
+    "recipe": 6,
+    "quantity": "65 g",
+    "name": "arugula",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 48,
+  "fields": {
+    "recipe": 6,
+    "quantity": "100 ml",
+    "name": "shaved Parmesan",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 49,
+  "fields": {
+    "recipe": 6,
+    "quantity": "50 ml",
+    "name": "toasted pine nuts",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 50,
+  "fields": {
+    "recipe": 6,
+    "quantity": "3-4 tbsp",
+    "name": "balsamic vinegar",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 51,
+  "fields": {
+    "recipe": 6,
+    "quantity": "1 tbsp",
+    "name": "olive oil",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 52,
+  "fields": {
+    "recipe": 7,
+    "quantity": "4 portions",
+    "name": "rice or pasta",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 53,
+  "fields": {
+    "recipe": 7,
+    "quantity": "600 g",
+    "name": "chicken breast fillets",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 54,
+  "fields": {
+    "recipe": 7,
+    "quantity": "",
+    "name": "salt",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 55,
+  "fields": {
+    "recipe": 7,
+    "quantity": "",
+    "name": "black pepper",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 56,
+  "fields": {
+    "recipe": 7,
+    "quantity": "50 ml",
+    "name": "plain flour",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 57,
+  "fields": {
+    "recipe": 7,
+    "quantity": "200 g",
+    "name": "sliced sun-dried tomatoes",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 58,
+  "fields": {
+    "recipe": 7,
+    "quantity": "2 tbsp",
+    "name": "olive oil",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 59,
+  "fields": {
+    "recipe": 7,
+    "quantity": "2",
+    "name": "garlic cloves",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 60,
+  "fields": {
+    "recipe": 7,
+    "quantity": "1 pinch",
+    "name": "chilli flakes",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 61,
+  "fields": {
+    "recipe": 7,
+    "quantity": "1/2 tsp",
+    "name": "dried oregano",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 62,
+  "fields": {
+    "recipe": 7,
+    "quantity": "1/2 tsp",
+    "name": "dried thyme",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 63,
+  "fields": {
+    "recipe": 7,
+    "quantity": "1/2",
+    "name": "chicken stock cube",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 64,
+  "fields": {
+    "recipe": 7,
+    "quantity": "250 ml",
+    "name": "water",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 65,
+  "fields": {
+    "recipe": 7,
+    "quantity": "250 ml",
+    "name": "whipping cream",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 66,
+  "fields": {
+    "recipe": 7,
+    "quantity": "150 ml",
+    "name": "grated Parmesan",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 67,
+  "fields": {
+    "recipe": 7,
+    "quantity": "1 handful",
+    "name": "fresh basil",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 68,
+  "fields": {
+    "recipe": 7,
+    "quantity": "",
+    "name": "Extra Parmesan for serving",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 69,
+  "fields": {
+    "recipe": 8,
+    "quantity": "400 ml",
+    "name": "ml plain flour",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 70,
+  "fields": {
+    "recipe": 8,
+    "quantity": "2 tsp",
+    "name": "baking powder",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 71,
+  "fields": {
+    "recipe": 8,
+    "quantity": "2 pinches",
+    "name": "pinches salt",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 72,
+  "fields": {
+    "recipe": 8,
+    "quantity": "50 g",
+    "name": "butter or margarine",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 73,
+  "fields": {
+    "recipe": 8,
+    "quantity": "200 ml",
+    "name": "milk",
+    "order": 0
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 13,
+  "fields": {
+    "recipe": 2,
+    "quantity": "400 g",
+    "name": "spaghetti",
+    "order": 1
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 96,
+  "fields": {
+    "recipe": 3,
+    "quantity": "",
+    "name": "ripe bananas",
+    "order": 1
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 14,
+  "fields": {
+    "recipe": 2,
+    "quantity": "2 tbsp",
+    "name": "Olive oil",
+    "order": 2
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 97,
+  "fields": {
+    "recipe": 3,
+    "quantity": "",
+    "name": "eggs",
+    "order": 2
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 15,
+  "fields": {
+    "recipe": 2,
+    "quantity": "3",
+    "name": "Garlic cloves",
+    "order": 3
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 98,
+  "fields": {
+    "recipe": 3,
+    "quantity": "",
+    "name": "ground cinnamon",
+    "order": 3
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 16,
+  "fields": {
+    "recipe": 2,
+    "quantity": "4",
+    "name": "Anchovy fillets",
+    "order": 4
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 99,
+  "fields": {
+    "recipe": 3,
+    "quantity": "",
+    "name": "vanilla extract",
+    "order": 4
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 17,
+  "fields": {
+    "recipe": 2,
+    "quantity": "1/2 tbsp",
+    "name": "Chilli flakes",
+    "order": 5
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 100,
+  "fields": {
+    "recipe": 3,
+    "quantity": "",
+    "name": "salt",
+    "order": 5
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 18,
+  "fields": {
+    "recipe": 2,
+    "quantity": "400 g",
+    "name": "Chopped tomatoes",
+    "order": 6
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 101,
+  "fields": {
+    "recipe": 3,
+    "quantity": "",
+    "name": "butter or neutral oil",
+    "order": 6
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 19,
+  "fields": {
+    "recipe": 2,
+    "quantity": "100 g",
+    "name": "Black olives",
+    "order": 7
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 102,
+  "fields": {
+    "recipe": 3,
+    "quantity": "",
+    "name": "fresh berries",
+    "order": 7
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 20,
+  "fields": {
+    "recipe": 2,
+    "quantity": "1 tbsp",
+    "name": "capers",
+    "order": 8
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 21,
+  "fields": {
+    "recipe": 2,
+    "quantity": "1 handful",
+    "name": "Fresh parsley",
+    "order": 9
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 22,
+  "fields": {
+    "recipe": 2,
+    "quantity": "",
+    "name": "Salt",
+    "order": 10
+  }
+},
+{
+  "model": "mealflow.ingredient",
+  "pk": 23,
+  "fields": {
+    "recipe": 2,
+    "quantity": "",
+    "name": "Pepper",
+    "order": 11
+  }
+}
 ]

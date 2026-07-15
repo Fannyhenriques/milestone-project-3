@@ -344,6 +344,8 @@ input[type="search"]::-webkit-search-cancel-button {
   color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
   transition: all 0.2s ease;
+  min-width: 7rem;
+  text-align: center;
 }
 
 .filter-pill span:hover {

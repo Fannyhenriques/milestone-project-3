@@ -11,18 +11,15 @@
 :root {
   --color-background: #f8f3ea;
   --color-primary: #1b4e47;
-  --color-secondary: #489E90;
+  --color-secondary: #07bba0;
   --color-surface: #ffffff;
 
 
   --font-primary: "Mulish", sans-serif;
 
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-black: 900;
-
 }
 
 /*spacing*/
@@ -90,6 +87,7 @@ img {
 /* containers */
 /* sections */
 .page-intro {
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -292,7 +290,7 @@ textarea {
 
 .recipe-search-section {
   width: min(90%, 700px);
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   padding: 1.5rem;
   border-radius: 1.5rem;
 }
@@ -424,7 +422,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .form-group label {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-primary);
 }
 
@@ -454,7 +452,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .auth-container a {
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .errorlist {
@@ -531,7 +529,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .recipe-grid-section {
   width: min(90%, 1400px);
-  margin: 3rem auto;
+  margin: 1rem auto;
 }
 
 .recipe-grid-section>h2 {
@@ -618,7 +616,7 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-bottom: 1.5rem;
   color: var(--color-primary);
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .recipe-detail-meta span:not(:last-child)::after {
@@ -631,29 +629,7 @@ input[type="search"]::-webkit-search-cancel-button {
   justify-content: center;
 }
 
-.btn-save {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border: 0;
-  background-color: #c75b70;
-  color: #fff;
-  width: auto;
-  min-width: max-content;
-  white-space: nowrap;
-  text-decoration: none;
-  padding: 0.75rem 1.25rem;
-}
 
-.btn-save a {
-  text-decoration: none;
-
-}
-
-.btn-save:hover {
-  background-color: #b90b2e;
-}
 
 .recipe-detail-section+.recipe-detail-section {
   margin-top: 3rem;
@@ -698,7 +674,7 @@ input[type="search"]::-webkit-search-cancel-button {
   background-color: var(--color-primary);
   color: #fff;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   content: counter(instruction-step);
 }
 
@@ -775,7 +751,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .recipe-form label {
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .recipe-form input,
@@ -806,6 +782,7 @@ input[type="search"]::-webkit-search-cancel-button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: row;
   gap: 1rem;
   margin-top: 0.75rem;
 }
@@ -820,17 +797,6 @@ input[type="search"]::-webkit-search-cancel-button {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-}
-
-.btn-danger {
-  border: 0;
-  background-color: #b61f1f;
-  color: #fff;
-}
-
-.btn-danger:hover,
-.btn-danger:focus-visible {
-  background-color: #963434;
 }
 
 .recipe-form .errorlist {
@@ -906,6 +872,10 @@ input[type="search"]::-webkit-search-cancel-button {
   .footer-container {
     flex-direction: row;
     justify-content: space-around;
+  }
+
+  .recipe-grid-section {
+    margin: 2rem auto;
   }
 }
 

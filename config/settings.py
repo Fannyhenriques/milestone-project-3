@@ -33,11 +33,11 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "mealflow.herokuapp.com",
+    "mealflow-c8de861cd143.herokuapp.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://mealflow.herokuapp.com",
+    "https://mealflow-c8de861cd143.herokuapp.com",
 ]
 
 # Application definition

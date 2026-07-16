@@ -55,3 +55,16 @@ The main purpose of the application is to:
 - Allow users to create and manage their own recipes.
 - Provide clear feedback after important actions.
 
+### Primary User Needs
+
+Users should be able to:
+
+- Understand the purpose of the application quickly.
+- Browse and view recipes without an account.
+- Search and filter recipes easily.
+- View clear ingredient lists and instructions.
+- Register, log in and manage their account securely.
+- Save recipes and manage their own contributions.
+- Receive clear feedback after important actions.
+- Use the application across mobile, tablet and desktop devices.
+

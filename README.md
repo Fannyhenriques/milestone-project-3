@@ -465,6 +465,18 @@ MealFlow was developed using a mobile-first approach and adapts across mobile, t
 
 Responsive features include a hamburger menu, flexible forms, scalable images, responsive recipe grids and adjusted spacing and typography.
 
+The screen breakpoints that were used are: 
+
+```css
+430 px
+481 px
+576 px
+600 px
+768 px
+1000 px
+1024 px
+```
+
 Detailed responsive testing can be found in [TESTING.md](TESTING.md).
 
 ### Accessibility

@@ -982,3 +982,93 @@ To run MealFlow locally, Python and Git must be installed.
 The local version uses SQLite by default unless a different `DATABASE_URL` environment variable is supplied.
 
 ---
+
+## Forking
+
+To create an independent copy of the repository:
+
+1. Log in to GitHub.
+2. Open the MealFlow repository.
+3. Select **Fork** near the top-right of the repository page.
+4. Choose the account where the fork should be created.
+5. GitHub will create a copy that can be changed without affecting the original repository.
+
+---
+
+## Local and Deployed Versions
+
+The local and deployed versions provide the same core functionality.
+
+The main infrastructure difference is the database:
+
+- The local development environment uses SQLite by default.
+- The deployed Heroku application uses PostgreSQL.
+
+Production also runs with `DEBUG=False` and serves static files through WhiteNoise.
+
+# Local Development
+
+## Requirements
+
+To run MealFlow locally, the following are required:
+
+- Python.
+- pip.
+- Git.
+- A code editor.
+- The packages listed in `requirements.txt`.
+
+## Installation
+
+1. Clone or fork the repository.
+2. Open the project directory.
+3. Create a virtual environment:
+
+```bash
+python3 -m venv venv
+```
+
+4. Activate the virtual environment on macOS or Linux:
+
+```bash
+source venv/bin/activate
+```
+
+On Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+5. Install the project dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+6. Add the required local environment variables.
+
+7. Apply database migrations:
+
+```bash
+python manage.py migrate
+```
+
+8. Create a superuser if required:
+
+```bash
+python manage.py createsuperuser
+```
+
+9. Start the Django development server:
+
+```bash
+python manage.py runserver
+```
+
+10. Open the local application in a browser:
+
+```text
+http://127.0.0.1:8000/
+```
+

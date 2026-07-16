@@ -738,3 +738,50 @@ The following are intentional limitations rather than bugs:
 - The application does not currently include ratings, comments or nutritional information.
 - The initial page load may occasionally be slower depending on the hosting service and current server response time.
 
+# Deployment
+
+MealFlow is deployed on [Heroku](https://www.heroku.com/) and uses a Heroku PostgreSQL database in production.
+
+The deployed application uses:
+
+- **Heroku** for cloud hosting.
+- **PostgreSQL** as the production database.
+- **Gunicorn** as the production web server.
+- **WhiteNoise** for static-file serving.
+- Environment variables for sensitive production settings.
+
+The deployed application can be viewed here:
+
+- [MealFlow Live Site](https://mealflow-c8de861cd143.herokuapp.com/)
+
+---
+
+## Version Control
+
+Git was used for version control throughout development, with GitHub used as the remote repository.
+
+The general workflow was:
+
+1. Changes were made and tested locally.
+2. Updated files were staged using:
+
+   ```bash
+   git add .
+   ```
+
+3. Changes were saved with descriptive commit messages:
+
+   ```bash
+   git commit -m "Commit message"
+   ```
+
+4. Commits were pushed to the main branch on GitHub:
+
+   ```bash
+   git push origin main
+   ```
+
+The Heroku application is connected to the GitHub repository, allowing new commits on the `main` branch to be deployed automatically.
+
+---
+

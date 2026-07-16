@@ -834,3 +834,32 @@ python -c "from django.core.management.utils import get_random_secret_key; print
 The generated value should be added directly to the Heroku Config Vars.
 
 ---
+
+## Static Files
+
+WhiteNoise is used to serve static files in production.
+
+The middleware is placed directly after Django's security middleware in `settings.py`:
+
+```python
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # Remaining middleware
+]
+```
+
+A static root is also configured so that Django can collect production assets:
+
+```python
+STATIC_ROOT = BASE_DIR / "staticfiles"
+```
+
+Static files are collected during deployment using:
+
+```bash
+python manage.py collectstatic
+```
+
+---
+

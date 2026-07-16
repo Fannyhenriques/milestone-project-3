@@ -722,3 +722,11 @@ The following issues were identified and resolved during development:
 | HTML validator reported an empty form action | The search form included an unnecessary empty `action=""` attribute. | Removed the empty action attribute and allowed the form to submit to the current page by default. |
 | HTML validator reported a section without a heading | A visual wrapper used a semantic `section` element without its own heading. | Replaced the `section` with a `div` because the element was used only for layout. |
 
+## Known Issue
+
+### Delete Confirmation May Occasionally Appear Twice
+
+On some occasions, the delete confirmation dialog may appear twice before a recipe is deleted.
+The deletion still completes correctly, and no data-integrity issues were observed. Cancelling the confirmation leaves the recipe unchanged.
+This is considered a minor non-critical issue and would be investigated further in future development.
+

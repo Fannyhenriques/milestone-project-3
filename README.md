@@ -702,3 +702,23 @@ Testing includes:
 - Deployment testing.
 
 ---
+
+# Bugs
+
+## Fixed Bugs
+
+The following issues were identified and resolved during development:
+
+| Bug | Cause | Solution |
+|---|---|---|
+| Missing database columns | New fields were added to the `Recipe` model before the corresponding migrations had been created and applied. | Ran `python manage.py makemigrations` followed by `python manage.py migrate` to update the database schema. |
+| Static CSS did not load | `home.html` was not extending `base.html`, so the stylesheet included in the base template was not applied. | Updated the template to extend `mealflow/base.html` and placed the page content inside the correct content block. |
+| Recipe grid layout broke | Some recipe cards were placed outside the `.recipe-grid` container, causing them to display as full-width elements. | Moved all recipe cards inside the shared grid container so the CSS Grid layout applied consistently. |
+| Hidden recipe cards remained visible | Existing CSS display rules overrode the browser's default behaviour for the HTML `hidden` attribute. | Added explicit CSS rules for `.recipe-card[hidden]` and `#load-more-recipes[hidden]` using `display: none`. |
+| Duplicate saved-recipe feedback | The JavaScript contained repeated toast logic, causing the same feedback behaviour to run more than once. | Removed the duplicated logic and moved the saved-recipe functionality into a dedicated initialization function. |
+| Django messages did not display | The message container was placed inside a template block that was replaced by child templates. | Moved the message container outside the replaceable content block while keeping it inside the main page structure. |
+| Footer exceeded the viewport width | The footer used `width: 100%` together with padding, while the default box model added the padding outside the declared width. | Added a global `box-sizing: border-box` reset for all elements and pseudo-elements. |
+| Page layout could not expand correctly | The `body` used `height: 100vh`, which restricted the layout as page content increased. | Replaced it with `min-height: 100vh` so the page could grow naturally. |
+| HTML validator reported an empty form action | The search form included an unnecessary empty `action=""` attribute. | Removed the empty action attribute and allowed the form to submit to the current page by default. |
+| HTML validator reported a section without a heading | A visual wrapper used a semantic `section` element without its own heading. | Replaced the `section` with a `div` because the element was used only for layout. |
+

@@ -161,7 +161,7 @@ Each recipe includes:
 - Ingredients and ordered instructions.
 - Author and timestamps.
 
-## Structure Plane
+## Features
 
 ### Information Architecture
 
@@ -174,7 +174,7 @@ The main areas of the application are:
 <p align="center">
   <img
     src="documentation/images/homepage.png"
-    alt="Filtered recipe results"
+    alt="homepage"
     width="900"
   >
 </p>

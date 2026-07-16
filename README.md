@@ -161,3 +161,221 @@ Each recipe includes:
 - Ingredients and ordered instructions.
 - Author and timestamps.
 
+## Structure Plane
+
+### Information Architecture
+
+The main areas of the application are:
+
+#### Home Page
+
+- The Home page is the main landing page for MealFlow. It introduces the purpose of the application and gives users immediate access to the available recipe collection. The page includes the MealFlow logo, responsive navigation, a search and filter form, and a responsive grid of recipe cards.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+- Users can search for recipes by entering a title in the search field. Recipes can also be filtered by meal type and food category using checkbox-style filter buttons. The recipe grid updates immediately when a filter is selected, allowing users to combine multiple options and quickly narrow down the results. The **Clear** button resets the search field and all selected filters.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+- Each recipe is presented as a card containing an image, title and category. Selecting a card opens the corresponding Recipe Details page, where the user can view the complete recipe. Up to 16 matching recipes are displayed initially. When more recipes are available, a **Load More** button appears and displays the next group of up to 16 recipes.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+- The navigation changes according to the user's authentication status. Visitors can access **Home**, **Register** and **Login**. Authenticated users instead have access to **Home**, **My Recipes**, **Add Recipe** and **Logout**. On smaller screens, the navigation is presented through a hamburger menu to keep the header clear and accessible.
+
+#### Recipe Details Page
+
+Selecting a recipe card opens the corresponding Recipe Details page, where the full recipe is displayed.
+The page includes the recipe image, description and key information such as food category, cooking time and number of servings. This is followed by a complete ingredient list and step-by-step cooking instructions.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+- The save action changes depending on the user's authentication status. Visitors see a **Log in to save recipe** button, while authenticated users see **Save recipe**. When a recipe is saved, the button changes to **Saved** and a toast message confirms that it has been added to the user's saved recipes. Selecting the button again removes the recipe, restores the **Save recipe** label and displays a confirmation message.
+
+- A **Back to recipes** button is shown at the bottom of the page. When the logged-in user is also the author of the recipe, an additional **Edit recipe** button is displayed, allowing them to update or delete their recipe.
+
+#### Registration Page
+
+Selecting **Register** in the navigation opens the Registration page, where visitors can create an account using Django's built-in `UserCreationForm`.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+The form requires a username, password and password confirmation. Django validates the submitted information and displays error messages when the username is unavailable, the passwords do not match or the password does not meet the required security rules.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+Users who already have an account can follow the **Already have an account? Log in here** link to open the Login page.
+After successful registration, the user is logged in automatically and redirected to the Home page.
+
+#### Login Page
+
+The Login page uses the same clean and consistent styling as the Registration page. Existing users can enter their username and password to access authenticated features such as saving recipes and managing their own recipe contributions.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+If the submitted username or password is incorrect, the form displays an error message and the user remains on the page.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+Visitors who do not yet have an account can follow the **Don't have an account? Register here** link to open the Registration page.
+
+#### My Recipes Page
+
+The **My Recipes** page is available to authenticated users and provides a personal overview of both saved and created recipes.
+
+Saved recipes and recipes created by the user are displayed in separate sections using the same responsive recipe-card layout as the Home page. Selecting a card opens the corresponding Recipe Details page.
+
+Saved recipes: 
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+Created recipes: 
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+When either section is empty, a clear message is displayed:
+
+- **You have not saved any recipes yet.**
+- **You have not created any recipes yet.**
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+A **Create recipe** button is displayed near the top of the page and links directly to the Create Recipe page.
+
+#### Create Recipe Page
+
+The **Create Recipe** page is available to authenticated users and provides a structured form for adding a new recipe to MealFlow.
+
+Users can select a food category and meal type, then enter a title, description, ingredients, instructions, number of servings and cooking time. Ingredients are entered one per line, allowing each item to be stored and displayed separately on the Recipe Details page.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+The following fields are required:
+
+- Category
+- Title
+- Ingredients
+- Instructions
+- Meal type
+- Cooking time
+
+If a required field is left empty, the form displays validation feedback and prevents submission until the missing information is provided. The servings field has a default value of **4**, but users can change it before submitting the form.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+After successful submission, the recipe is saved to the database, assigned to the logged-in user and displayed on its Recipe Details page. As user-uploaded images are not currently supported, a default image is assigned automatically based on the selected food category: vegetarian, dessert, chicken, meat or fish.
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+#### Edit Recipe Page
+
+Recipe authors can edit recipes they have created. The form is pre-filled with the existing recipe information, allowing the user to update any field.
+
+Users can choose to save their changes, cancel the edit and return to the recipe, or delete the recipe. After a successful update, a confirmation message is displayed and the user is redirected to the Recipe Details page.
+
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+#### Delete Recipe Action
+
+Only the recipe author can delete a recipe.
+
+Selecting **Delete recipe** opens a confirmation dialog to prevent accidental deletion. If the user confirms the action, the recipe is removed from the database and a success message is displayed. If the user cancels, the recipe remains unchanged.
+
+
+<p align="center">
+  <img
+    src="documentation/images/home-filtered.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+

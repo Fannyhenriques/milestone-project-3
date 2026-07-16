@@ -39,7 +39,7 @@ Users can browse, search and filter recipes, view complete recipe details and di
 
 # User Experience
 
-## Strategy Plane
+## Strategy 
 
 ### Purpose
 
@@ -55,7 +55,7 @@ The main purpose of the application is to:
 - Allow users to create and manage their own recipes.
 - Provide clear feedback after important actions.
 
-### Primary User Needs
+### User Needs
 
 Users should be able to:
 
@@ -82,9 +82,6 @@ The main goals for MealFlow were to:
 
 ---
 
-## Scope Plane
-
----
 ## Wireframes
 
 An initial wireframe was created in **Lucidchart** for the Home page to establish the overall structure, including the header, search and filter area, recipe grid and main call-to-action elements.
@@ -128,6 +125,9 @@ Although some details differ from the original wireframe, the core layout and de
 
 ---
 
+## Application Features
+
+
 ### Core Features
 
 MealFlow includes:
@@ -142,7 +142,7 @@ MealFlow includes:
 - Success messages and toast-style feedback.
 - Django admin management.
 
-### Recipe Content
+### Recipe Information
 
 Each recipe includes:
 
@@ -153,9 +153,8 @@ Each recipe includes:
 - Ingredients and ordered instructions.
 - Author and timestamps.
 
-## Features
 
-### Information Architecture
+### Site Pages
 
 The main areas of the application are:
 
@@ -176,7 +175,7 @@ The main areas of the application are:
 <p align="center">
   <img
     src="documentation/images/homepage-search.png"
-    alt="Filtered recipe results"
+    alt="Search recipe results"
     width="900"
   >
 </p>
@@ -195,22 +194,25 @@ The main areas of the application are:
 <p align="center">
   <img
     src="documentation/images/load-more-btn-desktop.png"
-    alt="Filtered recipe results"
+    alt="Load more button"
     width="700"
   >
 </p>
 
 - The navigation changes according to the user's authentication status. Visitors can access **Home**, **Register** and **Login**. Authenticated users instead have access to **Home**, **My Recipes**, **Add Recipe** and **Logout**. On smaller screens, the navigation is presented through a hamburger menu to keep the header clear and accessible.
 
+
+
 #### Recipe Details Page
 
 Selecting a recipe card opens the corresponding Recipe Details page, where the full recipe is displayed.
+
 The page includes the recipe image, description and key information such as food category, cooking time and number of servings. This is followed by a complete ingredient list and step-by-step cooking instructions.
 
 <p align="center">
   <img
     src="documentation/images/recipe-detail-page1.png"
-    alt="Filtered recipe results"
+    alt="Detail recipe page"
     width="900"
   >
 </p>
@@ -218,7 +220,7 @@ The page includes the recipe image, description and key information such as food
 <p align="center">
   <img
     src="documentation/images/recipe-detail-page2.png"
-    alt="Filtered recipe results"
+    alt="Detail recipe page"
     width="900"
   >
 </p>
@@ -234,7 +236,7 @@ Selecting **Register** in the navigation opens the Registration page, where visi
 <p align="center">
   <img
     src="documentation/images/registerpage.png"
-    alt="Filtered recipe results"
+    alt="Register page form"
     width="900"
   >
 </p>
@@ -244,7 +246,7 @@ The form requires a username, password and password confirmation. Django validat
 <p align="center">
   <img
     src="documentation/images/register-fail.png"
-    alt="Filtered recipe results"
+    alt="Register page fail"
     width="700"
   >
 </p>
@@ -259,7 +261,7 @@ The Login page uses the same clean and consistent styling as the Registration pa
 <p align="center">
   <img
     src="documentation/images/loginpage.png"
-    alt="Filtered recipe results"
+    alt="Loginpage form"
     width="900"
   >
 </p>
@@ -269,7 +271,7 @@ If the submitted username or password is incorrect, the form displays an error m
 <p align="center">
   <img
     src="documentation/images/login-fail.png"
-    alt="Filtered recipe results"
+    alt="Loginpage fail"
     width="700"
   >
 </p>
@@ -286,7 +288,7 @@ Saved recipes:
 <p align="center">
   <img
     src="documentation/images/my-recipes-saved.png"
-    alt="Filtered recipe results"
+    alt="Saved recipes"
     width="900"
   >
 </p>
@@ -295,7 +297,7 @@ Created recipes:
 <p align="center">
   <img
     src="documentation/images/my-recipes-created.png"
-    alt="Filtered recipe results"
+    alt="Created recipes"
     width="900"
   >
 </p>
@@ -308,7 +310,7 @@ When either section is empty, a clear message is displayed:
 <p align="center">
   <img
     src="documentation/images/my-recipes-norecipes.png"
-    alt="Filtered recipe results"
+    alt="No recipes"
     width="700"
   >
 </p>
@@ -324,7 +326,7 @@ Users can select a food category and meal type, then enter a title, description,
 <p align="center">
   <img
     src="documentation/images/create-recipe-form.png"
-    alt="Filtered recipe results"
+    alt="Create recipe form"
     width="700"
   >
 </p>
@@ -345,7 +347,7 @@ After successful submission, the recipe is saved to the database, assigned to th
 <p align="center">
   <img
     src="documentation/images/default-recipeimages.png"
-    alt="Filtered recipe results"
+    alt="Default recipes images"
     width="900"
   >
 </p>
@@ -360,7 +362,7 @@ Users can choose to save their changes, cancel the edit and return to the recipe
 <p align="center">
   <img
     src="documentation/images/create-recipe-buttons.png"
-    alt="Filtered recipe results"
+    alt="Create recipes buttons"
     width="900"
   >
 </p>
@@ -368,7 +370,7 @@ Users can choose to save their changes, cancel the edit and return to the recipe
 <p align="center">
   <img
     src="documentation/images/change-recipe-success-toast.png"
-    alt="Filtered recipe results"
+    alt="Recipe success toast"
     width="900"
   >
 </p>
@@ -383,7 +385,7 @@ Selecting **Delete recipe** opens a confirmation dialog to prevent accidental de
 <p align="center">
   <img
     src="documentation/images/confirm-delete-recipe.png"
-    alt="Filtered recipe results"
+    alt="Confirm delete recipe"
     width="900"
   >
 </p>
@@ -394,25 +396,10 @@ Selecting **Delete recipe** opens a confirmation dialog to prevent accidental de
 
 - Administrators can create, view, update and delete categories, recipes, ingredients, saved-recipe records and user accounts.
 
-### User Flow
-
-The main user journeys are outlined below. More detailed explanations are provided in the [Features](#features) section.
-
-**Visitors can:**
-
-- Browse, search and filter recipes.
-- Open a recipe to view ingredients and instructions.
-- Register or log in to access personalised features.
-
-**Registered users can:**
-
-- Save and remove recipes from their collection.
-- View saved and created recipes under **My Recipes**.
-- Create, edit and delete their own recipes.
-- Log out securely.
-
 ---
-## Skeleton Plane
+
+
+## Design & Accessibility
 
 ### Navigation
 
@@ -420,7 +407,7 @@ The main navigation provides access to the core pages of the application and cha
 
 On smaller screens, it is replaced by an accessible hamburger menu that updates its icon, `aria-expanded` state and label when opened or closed.
 
-### Layout and Interface
+### Layout
 
 MealFlow uses:
 
@@ -431,8 +418,6 @@ MealFlow uses:
 - Accessible forms with labels, fieldsets and validation feedback.
 - A mobile-first layout that adapts across mobile, tablet and desktop screen sizes.
 
----
-## Surface Plane
 
 ### Colour Scheme
 
@@ -502,6 +487,8 @@ Accessibility considerations include:
 ---
 
 # User Stories
+
+
 ## Visitor User Stories
 
 | User Story | Outcome |
@@ -540,7 +527,7 @@ Accessibility considerations include:
 
 
 
-## Future Features & improvments
+## Future Features & Improvements
 
 Possible future improvements include:
 
@@ -634,8 +621,11 @@ A dedicated system user is used as the author of the built-in recipes. This prev
 ## Languages
 
 - **HTML5** — Used to structure the application's pages and content.
+
 - **CSS3** — Used for layout, styling, responsive design and visual feedback.
+
 - **JavaScript** — Used for interactive features such as filtering, the hamburger menu, delete confirmation and saving recipes without a full page reload.
+
 - **Python** — Used for the server-side logic, database interaction and Django application functionality.
 
 ## Frameworks and Libraries
@@ -691,7 +681,6 @@ Testing includes:
 - JavaScript validation.
 - Python linting.
 - Lighthouse testing.
-- Deployment testing.
 
 ---
 
@@ -729,6 +718,8 @@ The following are intentional limitations rather than bugs:
 - Recipe images are selected from static project files instead of being uploaded by users.
 - The application does not currently include ratings, comments or nutritional information.
 - The initial page load may occasionally be slower depending on the hosting service and current server response time.
+
+---
 
 # Deployment
 

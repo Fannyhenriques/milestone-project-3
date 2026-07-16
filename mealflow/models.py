@@ -109,7 +109,7 @@ class Ingredient(models.Model):
             return f"{self.quantity} {self.name}"
 
         return self.name
-    
+
 
 class SavedRecipe(models.Model):
     """

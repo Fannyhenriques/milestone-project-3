@@ -27,14 +27,16 @@ urlpatterns = [
         name="login",
     ),
 
-    path("register/", 
-         views.register_view, 
-         name="register"
+    path(
+        "register/",
+        views.register_view,
+        name="register",
     ),
 
-    path("my-recipes/", 
-         views.my_recipes, 
-         name="my_recipes"
+    path(
+        "my-recipes/",
+        views.my_recipes,
+        name="my_recipes",
     ),
 
     path(

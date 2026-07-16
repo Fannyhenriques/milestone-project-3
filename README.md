@@ -1117,3 +1117,31 @@ To fork the repository:
 5. GitHub will create a copy of the repository in the selected account.
 
 ---
+
+# Credits
+
+## Code and Documentation
+
+| Source | Use |
+|---|---|
+| [Django 4.2 documentation](https://docs.djangoproject.com/en/4.2/) | Reference for models, views, forms, authentication, messages, admin and database functionality |
+| [Django 4.2 tutorial](https://docs.djangoproject.com/en/4.2/intro/tutorial01/) | Used to understand the initial project setup and Django development workflow |
+| [W3Schools Django Tutorial](https://www.w3schools.com/django/) | Introductory guidance while learning Django |
+| Code Institute course material | Project structure, Django concepts and deployment guidance |
+| [MDN Web Docs](https://developer.mozilla.org/) | HTML, CSS and JavaScript reference |
+| [WhiteNoise documentation](https://whitenoise.readthedocs.io/) | Static-file configuration |
+| [Gunicorn documentation](https://gunicorn.org/) | Production web-server configuration |
+
+## Content
+
+Recipe descriptions, ingredients and instructions were created for the project and refined with assistance from ChatGPT.
+
+## Media
+
+All recipe and decorative images used throughout MealFlow were sourced from the following royalty-free image platforms:
+
+- [Pexels](https://www.pexels.com/)
+- [Unsplash](https://unsplash.com/)
+- [Pixabay](https://pixabay.com/)
+
+Images were selected to represent the different recipes and food categories used within the application. Some images were resized or cropped to fit the responsive recipe-card and Recipe Details layouts.

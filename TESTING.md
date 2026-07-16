@@ -49,6 +49,26 @@ The stylesheet passed without errors or warnings.
 
 ## JavaScript Validation
 
+The JavaScript file was tested using [JSHint](https://jshint.com/).
+
+The project uses ES8 features, including `const`, `let`, arrow functions and asynchronous functions. The following directive was therefore added at the beginning of the JavaScript file:
+
+```js
+/* jshint esversion: 8 */
+```
+
+The file passed without errors or warnings. JSHint displayed code metrics only.
+
+<p align="center">
+  <img
+    src="documentation/images/validation-jshint.png"
+    alt="JSHint result showing that the JavaScript passed without warnings"
+    width="900"
+  >
+</p>
+
+---
+
 ## Python Validation
 
 ## Django System Checks

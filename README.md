@@ -548,7 +548,7 @@ Accessibility considerations include:
 
 
 
-## Future Features
+## Future Features & improvments
 
 Possible future improvements include:
 
@@ -623,6 +623,17 @@ The `SavedRecipe` model connects users with recipes they have saved.
 
 A unique database constraint prevents the same user from saving the same recipe more than once.
 
+## Data Model Development and Testing
+
+During the early stages of development, sample categories, recipes and ingredients were added manually through the Django admin interface.
+
+This was a deliberate part of the development process. Entering complete recipe data manually made it possible to test the relationships between the models and confirm that the database structure supported the application's requirements.
+
+This process also helped identify missing fields and usability improvements. For example, testing complete recipes showed that the `Recipe` model required fields for the number of servings and total cooking time. The Django admin interface was also improved by adding inline ingredient fields, allowing multiple ingredients to be created and edited together with a recipe.
+
+The local SQLite database is excluded from version control, meaning that records created during local development are not included directly in the GitHub repository. Reusable initial recipe data was therefore exported to a Django fixture and loaded into the production PostgreSQL database during deployment.
+
+A dedicated system user is used as the author of the built-in recipes. This prevents the initial recipe data from depending on a personal administrator account and avoids exposing administrator credentials.
 
 ---
 

@@ -29,6 +29,24 @@ All tested pages passed without errors or warnings.
 
 ## CSS Validation
 
+The deployed stylesheet was tested using the [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/).
+See links below.
+
+
+| Page | Result |
+|---|---|
+| Home | [Passed](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmealflow-c8de861cd143.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv) |
+| Recipe Details | [Passed](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmealflow-c8de861cd143.herokuapp.com%2Frecipe%2F1%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv) |
+| Register | [Passed](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmealflow-c8de861cd143.herokuapp.com%2Fregister%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv) |
+| Login | [Passed](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmealflow-c8de861cd143.herokuapp.com%2Flogin%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv) |
+| My Recipes | [Passed](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmealflow-c8de861cd143.herokuapp.com%2Fmy-recipes%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv) |
+| Create Recipe | [Passed](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmealflow-c8de861cd143.herokuapp.com%2Fcreate-recipe%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv) |
+| Edit Recipe | [Passed](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmealflow-c8de861cd143.herokuapp.com%2Frecipe%2F1%2Fedit%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv) |
+
+The stylesheet passed without errors or warnings.
+
+---
+
 ## JavaScript Validation
 
 ## Python Validation

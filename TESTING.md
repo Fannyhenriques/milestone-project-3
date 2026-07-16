@@ -444,6 +444,44 @@ The user stories defined in the README were tested through the application's mai
 
 # Responsive Design Testing
 
+MealFlow was developed using a mobile-first approach and tested using browser developer tools at a range of viewport sizes.
+
+| Width | Expected Behaviour | Status |
+|---:|---|---|
+| 320px | Content fits without unintended horizontal scrolling | Pass |
+| 375px | Search, filters, navigation and cards remain usable | Pass |
+| 429px | Equal-width mobile filter pills display correctly | Pass |
+| 430px | Filter controls change to their wider responsive styling | Pass |
+| 576px | Filter spacing and padding adapt correctly | Pass |
+| 600px | Recipe grid changes to two columns | Pass |
+| 768px | Tablet spacing, images and forms adapt correctly | Pass |
+| 1000px | Recipe grid changes to four columns | Pass |
+| 1024px | Desktop navigation replaces the hamburger menu | Pass |
+| 1440px | Content remains centred and readable on a large display | Pass |
+
+The following elements were checked:
+
+- Main navigation.
+- Hamburger menu.
+- Search field and filter pills.
+- Recipe-card grid.
+- Recipe Details page.
+- Authentication forms.
+- Create and Edit Recipe forms.
+- Buttons and toast messages.
+- Image scaling.
+- Text wrapping.
+- Horizontal scrolling.
+
+**Example responsive layouts:**
+
+| Desktop                                                                                                                      | Tablet                                                                                                                     | Mobile                                                                                                                     |
+| ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| <img src="documentation/images/responsive-desktop.png" alt="MealFlow Home page displayed on a desktop viewport" width="300"> | <img src="documentation/images/responsive-tablet.png" alt="MealFlow Home page displayed on a tablet viewport" width="250"> | <img src="documentation/images/responsive-mobile.png" alt="MealFlow Home page displayed on a mobile viewport" width="200"> |
+
+
+---
+
 # Browser Compatibility
 
 # Accessibility Testing

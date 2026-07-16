@@ -1072,3 +1072,48 @@ python manage.py runserver
 http://127.0.0.1:8000/
 ```
 
+## Database Migrations
+
+When model changes are made, create and apply migrations with:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+---
+
+## Cloning
+
+To clone the repository:
+
+1. Open the GitHub repository.
+2. Select the green **Code** button.
+3. Copy the HTTPS, SSH or GitHub CLI URL.
+4. Open a terminal.
+5. Move to the directory where the project should be stored.
+6. Run:
+
+```bash
+git clone ADD_REPOSITORY_URL
+```
+
+7. Enter the project directory:
+
+```bash
+cd milestone-project-3
+```
+
+---
+
+## Forking
+
+To fork the repository:
+
+1. Log in to GitHub.
+2. Open the MealFlow repository.
+3. Select **Fork** near the top of the page.
+4. Choose where the fork should be created.
+5. GitHub will create a copy of the repository in the selected account.
+
+---

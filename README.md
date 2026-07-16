@@ -227,6 +227,14 @@ The page includes the recipe image, description and key information such as food
 
 - The save action changes depending on the user's authentication status. Visitors see a **Log in to save recipe** button, while authenticated users see **Save recipe**. When a recipe is saved, the button changes to **Saved** and a toast message confirms that it has been added to the user's saved recipes. Selecting the button again removes the recipe, restores the **Save recipe** label and displays a confirmation message.
 
+<p align="center">
+  <img
+    src="documentation/images/detailpage-save-btn.png"
+    alt="Detail recipe page"
+    width="700"
+  >
+</p>
+
 - A **Back to recipes** button is shown at the bottom of the page. When the logged-in user is also the author of the recipe, an additional **Edit recipe** button is displayed, allowing them to update or delete their recipe.
 
 #### Registration Page

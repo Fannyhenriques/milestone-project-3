@@ -548,3 +548,21 @@ Accessibility considerations include:
 
 
 
+## Future Features
+
+Possible future improvements include:
+
+- User-uploaded recipe images.
+- Ratings, reviews and recipe comments.
+- Nutritional information.
+- Ingredient scaling based on servings.
+- Additional filters for preparation time and difficulty.
+- User profile pages.
+- Saved recipe collections and meal planning.
+- Recipe sharing and shopping-list generation.
+- Email-based password reset.
+- Custom 404 and 500 error pages.
+- Pagination or infinite scrolling for larger recipe collections.
+
+---
+

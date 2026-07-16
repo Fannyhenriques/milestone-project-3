@@ -210,6 +210,30 @@ Performance scores varied slightly between test runs. The Recipe Details page ac
 
 ## Visitor Features
 
+| Feature | Test | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| Open the Home page | Visit the deployed website | The introduction, navigation, search area and recipe grid are displayed | Worked as expected | Pass |
+| Browse recipes | View the recipe grid | Available recipes are displayed as recipe cards | Worked as expected | Pass |
+| Open a recipe | Select a recipe card | The corresponding Recipe Details page opens | Worked as expected | Pass |
+| Return to recipes | Select **Back to recipes** | The user returns to the Home page | Worked as expected | Pass |
+| Search by title | Enter all or part of a recipe title | Matching recipe cards remain visible | Worked as expected | Pass |
+| Filter by meal type | Select one or more meal-type filters | Matching recipes are displayed immediately | Worked as expected | Pass |
+| Filter by category | Select one or more category filters | Matching recipes are displayed immediately | Worked as expected | Pass |
+| Combine filters | Select meal-type and category filters | Only recipes matching the combined criteria are shown | Worked as expected | Pass |
+| Clear search and filters | Select **Clear** | The search field and selected filters are reset | Worked as expected | Pass |
+| No matching results | Enter a search term with no matching recipes | A clear no-results message is displayed | Worked as expected | Pass |
+| Load more recipes | Select **Load more** when more than 16 matching recipes exist | Up to 16 additional recipes are displayed | Worked as expected | Pass |
+| Save while logged out | Select **Log in to save recipe** | The Login page opens | Worked as expected | Pass |
+
+
+**Example screenshots:**
+
+| Search                                                                                                          | Filters                                                                                                                  | Load More                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| <img src="documentation/images/homepage-search.png" alt="MealFlow search results on the Home page" width="250"> | <img src="documentation/images/homepage-filter.png" alt="MealFlow filtered recipe results on the Home page" width="250"> | <img src="documentation/images/load-more-btn-mobile.png" alt="MealFlow Load More button on mobile" width="250"> |
+
+---
+
 ## Authentication
 
 ## Saved Recipes

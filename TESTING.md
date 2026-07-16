@@ -382,11 +382,48 @@ Performance scores varied slightly between test runs. The Recipe Details page ac
 
 # User Story Testing
 
+The user stories defined in the README were tested through the application's main user journeys.
+
 ## Visitor User Stories
+
+| User Story | Test Result | Status |
+|---|---|---|
+| Understand the purpose of MealFlow | The Home page presents an introduction and recipe collection | Pass |
+| Browse available recipes | Recipe cards are visible on the Home page | Pass |
+| Search for a recipe | Recipe cards update according to the search term | Pass |
+| Filter recipes | Meal-type and category filters update the grid | Pass |
+| View full recipe details | Selecting a card opens its details page | Pass |
+| Return to the recipe collection | **Back to recipes** returns the visitor to Home | Pass |
+| Register for an account | A valid account can be created | Pass |
+| Log in | Valid credentials provide access to authenticated features | Pass |
 
 ## Registered User Stories
 
+| User Story | Test Result | Status |
+|---|---|---|
+| Save recipes | A recipe can be added to the saved collection | Pass |
+| Remove saved recipes | A saved recipe can be removed without reloading | Pass |
+| View saved recipes | Saved recipes are displayed under My Recipes | Pass |
+| Create a recipe | A valid recipe can be saved to the database | Pass |
+| See a new recipe immediately | The new recipe appears on Home and My Recipes | Pass |
+| Edit an owned recipe | The author can update the recipe | Pass |
+| Delete an owned recipe | The author can remove the recipe | Pass with known issue |
+| Receive a deletion warning | A confirmation dialog appears before deletion | Pass |
+| Receive feedback | Confirmation messages appear after important actions | Pass |
+| Log out | The authenticated session ends successfully | Pass |
+
 ## Administrator User Stories
+
+| User Story | Test Result | Status |
+|---|---|---|
+| Manage categories | Categories can be managed through Django admin | Pass |
+| Manage recipes | Recipes can be managed through Django admin | Pass |
+| Manage ingredients | Ingredients can be managed inline with recipes | Pass |
+| Manage saved recipe records | SavedRecipe records are available in Django admin | Pass |
+
+
+
+---
 
 # Form Validation
 

@@ -175,7 +175,7 @@ The main areas of the application are:
   <img
     src="documentation/images/homepage.png"
     alt="homepage"
-    width="800"
+    width="900"
   >
 </p>
 
@@ -204,7 +204,7 @@ The main areas of the application are:
   <img
     src="documentation/images/load-more-btn-desktop.png"
     alt="Filtered recipe results"
-    width="900"
+    width="700"
   >
 </p>
 
@@ -253,7 +253,7 @@ The form requires a username, password and password confirmation. Django validat
   <img
     src="documentation/images/register-fail.png"
     alt="Filtered recipe results"
-    width="900"
+    width="700"
   >
 </p>
 
@@ -278,7 +278,7 @@ If the submitted username or password is incorrect, the form displays an error m
   <img
     src="documentation/images/login-fail.png"
     alt="Filtered recipe results"
-    width="900"
+    width="700"
   >
 </p>
 
@@ -317,7 +317,7 @@ When either section is empty, a clear message is displayed:
   <img
     src="documentation/images/my-recipes-norecipes.png"
     alt="Filtered recipe results"
-    width="900"
+    width="700"
   >
 </p>
 
@@ -333,7 +333,7 @@ Users can select a food category and meal type, then enter a title, description,
   <img
     src="documentation/images/create-recipe-form.png"
     alt="Filtered recipe results"
-    width="900"
+    width="700"
   >
 </p>
 
@@ -448,7 +448,7 @@ The colour scheme was designed to feel warm, natural and welcoming. The palette 
 
 <p align="center">
   <img
-    src="documentation/images/colour-palette.png"
+    src="documentation/images/colors-1.png"
     alt="MealFlow colour palette"
     width="700"
   >
@@ -472,7 +472,7 @@ Additional colours are used for action buttons, destructive actions, borders and
 
 <p align="center">
   <img
-    src="documentation/images/colour-palette.png"
+    src="documentation/images/colors-2.png"
     alt="MealFlow colour palette"
     width="700"
   >

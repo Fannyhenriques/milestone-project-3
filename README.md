@@ -22,26 +22,18 @@ Users can browse, search and filter recipes, view complete recipe details and di
 ## Table of Contents
 
 - [User Experience](#user-experience)
-  - [Strategy Plane](#strategy-plane)
-  - [Scope Plane](#scope-plane)
-  - [Structure Plane](#structure-plane)
-  - [Skeleton Plane](#skeleton-plane)
-  - [Surface Plane](#surface-plane)
-- [User Stories](#user-stories)
 - [Wireframes](#wireframes)
-- [Features](#features)
-  - [Existing Features](#existing-features)
-  - [Future Features](#future-features)
+- [Application Features](#application-features)
+- [Design & Accessibility](#design--accessibility)
+- [User Stories](#user-stories)
+- [Future Features & Improvements](#future-features--improvements)
+- [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Data Model](#data-model)
 - [Technologies Used](#technologies-used)
 - [Testing](#testing)
 - [Bugs](#bugs)
 - [Deployment](#deployment)
-- [Local Development](#local-development)
-  - [Cloning](#cloning)
-  - [Forking](#forking)
 - [Credits](#credits)
-- [Acknowledgements](#acknowledgements)
 
 ---
 

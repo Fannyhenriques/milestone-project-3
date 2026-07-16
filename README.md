@@ -150,3 +150,14 @@ MealFlow includes:
 - Success messages and toast-style feedback.
 - Django admin management.
 
+### Recipe Content
+
+Each recipe includes:
+
+- Title and description.
+- Meal type and food category.
+- Servings and cooking time.
+- Recipe image.
+- Ingredients and ordered instructions.
+- Author and timestamps.
+

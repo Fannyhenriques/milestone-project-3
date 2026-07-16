@@ -666,3 +666,28 @@ A unique database constraint prevents the same user from saving the same recipe 
 | ADD_ERD_TOOL | Database diagram creation |
 
 ---
+
+# Testing
+
+Detailed testing documentation can be found in:
+
+[TESTING.md](TESTING.md)
+
+Testing includes:
+
+- Manual feature testing.
+- User-story testing.
+- Authentication testing.
+- CRUD testing.
+- Authorisation testing.
+- Responsive testing.
+- Browser compatibility testing.
+- Accessibility testing.
+- HTML validation.
+- CSS validation.
+- JavaScript validation.
+- Python linting.
+- Lighthouse testing.
+- Deployment testing.
+
+---

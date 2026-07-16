@@ -173,7 +173,7 @@ The main areas of the application are:
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/homepage.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -183,17 +183,26 @@ The main areas of the application are:
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/homepage-search.png"
     alt="Filtered recipe results"
     width="900"
   >
 </p>
 
+<p align="center">
+  <img
+    src="documentation/images/homepage-filter.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+
 - Each recipe is presented as a card containing an image, title and category. Selecting a card opens the corresponding Recipe Details page, where the user can view the complete recipe. Up to 16 matching recipes are displayed initially. When more recipes are available, a **Load More** button appears and displays the next group of up to 16 recipes.
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/load-more-btn-desktop.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -208,7 +217,15 @@ The page includes the recipe image, description and key information such as food
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/recipe-detail-page1.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+<p align="center">
+  <img
+    src="documentation/images/recipe-detail-page2.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -224,7 +241,7 @@ Selecting **Register** in the navigation opens the Registration page, where visi
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/registerpage.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -234,7 +251,7 @@ The form requires a username, password and password confirmation. Django validat
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/register-fail.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -249,7 +266,7 @@ The Login page uses the same clean and consistent styling as the Registration pa
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/loginpage.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -259,7 +276,7 @@ If the submitted username or password is incorrect, the form displays an error m
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/login-fail.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -276,7 +293,7 @@ Saved recipes and recipes created by the user are displayed in separate sections
 Saved recipes: 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/my-recipes-saved.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -285,7 +302,7 @@ Saved recipes:
 Created recipes: 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/my-recipes-created.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -298,7 +315,7 @@ When either section is empty, a clear message is displayed:
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/my-recipes-norecipes.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -314,7 +331,7 @@ Users can select a food category and meal type, then enter a title, description,
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/create-recipe-form.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -331,19 +348,11 @@ The following fields are required:
 
 If a required field is left empty, the form displays validation feedback and prevents submission until the missing information is provided. The servings field has a default value of **4**, but users can change it before submitting the form.
 
-<p align="center">
-  <img
-    src="documentation/images/home-filtered.png"
-    alt="Filtered recipe results"
-    width="900"
-  >
-</p>
-
 After successful submission, the recipe is saved to the database, assigned to the logged-in user and displayed on its Recipe Details page. As user-uploaded images are not currently supported, a default image is assigned automatically based on the selected food category: vegetarian, dessert, chicken, meat or fish.
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/default-recipeimages.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -358,7 +367,15 @@ Users can choose to save their changes, cancel the edit and return to the recipe
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/create-recipe-buttons.png"
+    alt="Filtered recipe results"
+    width="900"
+  >
+</p>
+
+<p align="center">
+  <img
+    src="documentation/images/change-recipe-success-toast.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -373,7 +390,7 @@ Selecting **Delete recipe** opens a confirmation dialog to prevent accidental de
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
+    src="documentation/images/confirm-delete-recipe.png"
     alt="Filtered recipe results"
     width="900"
   >
@@ -401,5 +418,93 @@ The main user journeys are outlined below. More detailed explanations are provid
 - View saved and created recipes under **My Recipes**.
 - Create, edit and delete their own recipes.
 - Log out securely.
+
+---
+## Skeleton Plane
+
+### Navigation
+
+The main navigation provides access to the core pages of the application and changes according to the user's authentication status.
+
+On smaller screens, it is replaced by an accessible hamburger menu that updates its icon, `aria-expanded` state and label when opened or closed.
+
+### Layout and Interface
+
+MealFlow uses:
+
+- A shared base template with a consistent header and footer.
+- Reusable recipe cards and button styles.
+- Responsive grid layouts.
+- Clearly separated content sections.
+- Accessible forms with labels, fieldsets and validation feedback.
+- A mobile-first layout that adapts across mobile, tablet and desktop screen sizes.
+
+---
+## Surface Plane
+
+### Colour Scheme
+
+The colour scheme was designed to feel warm, natural and welcoming. The palette was created using [Coolors](https://coolors.co/2d2d2d-6a9e6f-f4a261-87ceeb-faf9f6).
+
+<p align="center">
+  <img
+    src="documentation/images/colour-palette.png"
+    alt="MealFlow colour palette"
+    width="700"
+  >
+</p>
+
+The main colours are stored as CSS custom properties to maintain consistency across the application:
+
+```css
+--color-background: #f8f3ea;
+--color-primary: #1b4e47;
+--color-secondary: #07bba0;
+--color-surface: #ffffff;
+```
+Additional colours are used for action buttons, destructive actions, borders and validation feedback:
+
+```css
+--color-accent: #be435c;
+--color-danger: #bc0202;
+--color-border: #cfcfcf;
+```
+
+<p align="center">
+  <img
+    src="documentation/images/colour-palette.png"
+    alt="MealFlow colour palette"
+    width="700"
+  >
+</p>
+
+### Typography
+
+The **Mulish** typeface is used throughout MealFlow to create a clean, modern and readable interface across different screen sizes.
+
+### Responsive Design
+
+MealFlow was developed using a mobile-first approach and adapts across mobile, tablet, laptop and desktop screen sizes.
+
+Responsive features include a hamburger menu, flexible forms, scalable images, responsive recipe grids and adjusted spacing and typography.
+
+Detailed responsive testing can be found in [TESTING.md](TESTING.md).
+
+### Accessibility
+
+Accessibility considerations include:
+
+- Semantic HTML elements.
+- A skip link for keyboard users.
+- Visually hidden labels where required.
+- Descriptive labels for form controls.
+- Fieldsets and legends for filter groups.
+- Alternative text for recipe images.
+- Keyboard-accessible buttons and links.
+- Visible focus indicators.
+- ARIA attributes for the navigation toggle.
+- An `aria-live` region for feedback messages.
+- Sufficient colour contrast.
+- Confirmation before recipe deletion.
 
 ---

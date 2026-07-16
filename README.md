@@ -175,7 +175,7 @@ The main areas of the application are:
   <img
     src="documentation/images/homepage.png"
     alt="homepage"
-    width="900"
+    width="800"
   >
 </p>
 

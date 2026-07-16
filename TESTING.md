@@ -522,5 +522,17 @@ Accessibility was also evaluated using Google Lighthouse, achieving high accessi
 
 ## Fixed Bugs
 
+| Bug | Cause | Resolution |
+|---|---|---|
+| Recipe fields caused a missing-column database error | Model fields were added before the new migration had been applied | New migrations were created and applied |
+| Recipe loop caused an invalid static template tag error | Static image handling inside the template was incorrect | The static template syntax and image path handling were corrected |
+| Recipe data did not initially appear after deployment | Local SQLite data is separate from the Heroku PostgreSQL database | Initial recipe data was exported to a fixture and loaded into the production database |
+| Fixture import failed | The fixture included recipes belonging to a user that did not exist in production | The fixture was limited to the intended initial recipes and imported successfully |
+| JSHint reported modern JavaScript syntax warnings | JSHint was using an older default ECMAScript version | ES8 was enabled and ambiguous ternary line breaks were corrected |
+| HTML validation reported an empty form action | The search form used `action=""` | The unnecessary action attribute was removed |
+| HTML validation reported a section without a heading | A visual content wrapper used a `section` element without its own heading | The wrapper was changed to a `div` |
+
+
 ## Known Bugs
 
+Occasionally, the delete confirmation button may require a second click before the deletion is processed. After confirmation, there may also be a short delay before the success message is displayed. The recipe is deleted successfully and no functionality is affected.

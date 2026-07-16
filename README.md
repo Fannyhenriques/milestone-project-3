@@ -785,3 +785,52 @@ The Heroku application is connected to the GitHub repository, allowing new commi
 
 ---
 
+## Deployment Preparation
+
+The production dependencies were installed using:
+
+```bash
+pip install gunicorn psycopg2-binary dj-database-url whitenoise
+```
+
+The dependency file was then updated:
+
+```bash
+pip freeze > requirements.txt
+```
+
+A `Procfile` was added to the project root to tell Heroku how to start the application:
+
+```text
+web: gunicorn config.wsgi
+```
+
+A `.python-version` file was also added to define the Python version used during deployment:
+
+```text
+3.11
+```
+
+---
+
+## Environment Variables
+
+The following Config Vars were added through the Heroku application settings:
+
+| Key | Purpose |
+|---|---|
+| `SECRET_KEY` | Stores the Django secret key securely |
+| `DATABASE_URL` | Connects Django to the production PostgreSQL database |
+| `DEBUG` | Controls Django debug mode and is set to `False` in production |
+
+Sensitive values are stored in Heroku and are not committed to the GitHub repository.
+
+A new Django secret key can be generated locally using:
+
+```bash
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
+
+The generated value should be added directly to the Heroku Config Vars.
+
+---

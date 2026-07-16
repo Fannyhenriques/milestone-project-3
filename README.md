@@ -2,8 +2,8 @@
 
 <p align="center">
   <img
-    src="documentation/images/home-filtered.png"
-    alt="Filtered recipe results"
+    src="documentation/images/responsvie-mockup.png"
+    alt="Responsive Mealflow"
     width="900"
   >
 </p>
@@ -573,6 +573,36 @@ Possible future improvements include:
 - Email-based password reset.
 - Custom 404 and 500 error pages.
 - Pagination or infinite scrolling for larger recipe collections.
+- Reusable CSS spacing variables for better consistency and maintainability.
+
+
+---
+
+# Entity Relationship Diagram
+
+The diagram below provides a simplified overview of the relationships between the application's main models.
+
+```text
+┌──────────┐
+│   User   │
+└────┬─────┘
+     │ creates
+     ▼
+┌────────────┐
+│   Recipe   │
+└──┬─────┬───┘
+   │     │
+   │     └──────────────┐
+   │                    │
+belongs to          has many
+   ▼                    ▼
+┌─────────┐      ┌────────────┐
+│ Category│      │ Ingredient │
+└─────────┘      └────────────┘
+
+User ─────── saves ────── SavedRecipe ────── Recipe
+
+```
 
 ---
 
@@ -639,7 +669,7 @@ During the early stages of development, sample categories, recipes and ingredien
 
 This was a deliberate part of the development process. Entering complete recipe data manually made it possible to test the relationships between the models and confirm that the database structure supported the application's requirements.
 
-This process also helped identify missing fields and usability improvements. For example, testing complete recipes showed that the `Recipe` model required fields for the number of servings and total cooking time. The Django admin interface was also improved by adding inline ingredient fields, allowing multiple ingredients to be created and edited together with a recipe.
+This process also helped me identify missing fields and usability improvements. For example, testing complete recipes showed that the `Recipe` model required fields for the number of servings and total cooking time. The Django admin interface was also improved by adding inline ingredient fields, allowing multiple ingredients to be created and edited together with a recipe.
 
 The local SQLite database is excluded from version control, meaning that records created during local development are not included directly in the GitHub repository. Reusable initial recipe data was therefore exported to a Django fixture and loaded into the production PostgreSQL database during deployment.
 

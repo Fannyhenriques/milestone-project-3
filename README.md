@@ -730,3 +730,11 @@ On some occasions, the delete confirmation dialog may appear twice before a reci
 The deletion still completes correctly, and no data-integrity issues were observed. Cancelling the confirmation leaves the recipe unchanged.
 This is considered a minor non-critical issue and would be investigated further in future development.
 
+## Current Limitations
+
+The following are intentional limitations rather than bugs:
+
+- Recipe images are selected from static project files instead of being uploaded by users.
+- The application does not currently include ratings, comments or nutritional information.
+- The initial page load may occasionally be slower depending on the hosting service and current server response time.
+

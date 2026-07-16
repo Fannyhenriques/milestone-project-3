@@ -427,6 +427,21 @@ The user stories defined in the README were tested through the application's mai
 
 # Form Validation
 
+| Form | Test | Expected Result | Status |
+|---|---|---|---|
+| Registration | Leave required fields empty | Submission is prevented | Pass |
+| Registration | Enter mismatched passwords | An error is displayed | Pass |
+| Registration | Enter an invalid password | Django displays password validation feedback | Pass |
+| Login | Leave credentials empty | Submission is prevented | Pass |
+| Login | Enter incorrect credentials | An error is displayed | Pass |
+| Create Recipe | Leave required fields empty | Submission is prevented and the missing fields are identified | Pass |
+| Create Recipe | Enter valid details | The recipe is saved | Pass |
+| Edit Recipe | Submit valid changes | The recipe is updated | Pass |
+| Search | Enter text within the permitted length | Matching recipes are displayed | Pass |
+| Delete Recipe | Cancel the confirmation dialog | The recipe remains unchanged | Pass |
+
+---
+
 # Responsive Design Testing
 
 # Browser Compatibility

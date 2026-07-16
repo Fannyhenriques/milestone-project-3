@@ -496,6 +496,25 @@ Accessibility considerations include:
 - Sufficient colour contrast.
 - Confirmation before recipe deletion.
 
+
+### User Flow
+
+The main user journeys are outlined below. More detailed explanations are provided in the [Features](#features) section.
+
+**Visitors can:**
+
+- Browse, search and filter recipes.
+- Open a recipe to view ingredients and instructions.
+- Register or log in to access personalised features.
+
+**Registered users can:**
+
+- Save and remove recipes from their collection.
+- View saved and created recipes under **My Recipes**.
+- Create, edit and delete their own recipes.
+- Log out securely.
+
+
 ---
 
 # User Stories

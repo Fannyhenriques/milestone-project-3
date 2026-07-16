@@ -355,7 +355,30 @@ Performance scores varied slightly between test runs. The Recipe Details page ac
 
 ## Authorisation
 
+| Test | Expected Result | Actual Result | Status |
+|---|---|---|---|
+| Open Create Recipe while logged out | The user is redirected to Login | Worked as expected | Pass |
+| Open My Recipes while logged out | The user is redirected to Login | Worked as expected | Pass |
+| Edit own recipe | The Edit option is available | Worked as expected | Pass |
+| Edit another user's recipe through the interface | No Edit option is displayed | Worked as expected | Pass |
+| Enter another user's edit URL manually | Access is denied because the recipe is not owned by the current user | Worked as expected | Pass |
+| Delete another user's recipe | The recipe cannot be deleted by that user | Worked as expected | Pass |
+| Save recipe while authenticated | The recipe can be added to the current user's collection | Worked as expected | Pass |
+
+---
+
 ## Administrator Features
+
+| Feature | Test | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| Access Django admin | Log in with an administrator account | The admin dashboard opens | Worked as expected | Pass |
+| Manage users | View and update user records | User records can be managed | Worked as expected | Pass |
+| Manage categories | Create, edit or remove a category | Category data is updated | Worked as expected | Pass |
+| Manage recipes | Create, edit or remove a recipe | Recipe data is updated | Worked as expected | Pass |
+| Manage ingredients | Edit ingredients through the Recipe admin | Ingredient data is updated | Worked as expected | Pass |
+| Manage saved recipes | View or remove SavedRecipe records | Saved relationships can be managed | Worked as expected | Pass |
+
+---
 
 # User Story Testing
 

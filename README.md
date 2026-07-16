@@ -863,3 +863,46 @@ python manage.py collectstatic
 
 ---
 
+## Heroku Deployment Steps
+
+The following process was used to deploy MealFlow:
+
+1. Log in to Heroku and select **Create new app**.
+2. Enter a unique application name and choose the appropriate region.
+3. Add a Heroku PostgreSQL database to the application.
+4. Open **Settings** and add the required Config Vars:
+   - `SECRET_KEY`
+   - `DATABASE_URL`
+   - `DEBUG=False`
+5. Confirm that the project contains:
+   - `requirements.txt`
+   - `Procfile`
+   - `.python-version`
+6. Open the **Deploy** tab.
+7. Select **GitHub** as the deployment method.
+8. Connect the Heroku application to the project repository.
+9. Select the `main` branch.
+10. Enable automatic deployment or select **Deploy Branch** manually.
+11. Run the production database migrations:
+
+    ```bash
+    heroku run python manage.py migrate
+    ```
+
+12. Create an administrator account:
+
+    ```bash
+    heroku run python manage.py createsuperuser
+    ```
+
+13. Load the initial recipe data:
+
+    ```bash
+    heroku run python manage.py loaddata initial_recipes.json
+    ```
+
+14. Open the deployed application and verify that the database, static files and application features work correctly.
+
+> The initial fixture should only be loaded once to avoid duplicate or conflicting database records.
+
+---

@@ -133,6 +133,79 @@ Result:
 
 # Lighthouse Testing
 
+Google Lighthouse was used to evaluate the deployed application in the following areas:
+
+- Performance
+- Accessibility
+- Best Practices
+- SEO
+
+See results below.
+
+Homepage: 
+
+<p align="center">
+  <img
+    src="documentation/images/homepage-lighthouse.png"
+    alt="Lighthouse result for the MealFlow Home page"
+    width="600"
+  >
+</p>
+
+Login page:
+
+<p align="center">
+  <img
+    src="documentation/images/lighthouse-login.png"
+    alt="Lighthouse result for the MealFlow login page"
+    width="600"
+  >
+</p>
+
+Register page: 
+
+<p align="center">
+  <img
+    src="documentation/images/lighthouse-register.png"
+    alt="Lighthouse result for the MealFlow register page"
+    width="600"
+  >
+</p>
+
+My Recipes page: 
+
+<p align="center">
+  <img
+    src="documentation/images/lighthouse-my-recipes.png"
+    alt="Lighthouse result for the MealFlow my recipes page"
+    width="600"
+  >
+</p>
+
+Create Recipe page: 
+
+<p align="center">
+  <img
+    src="documentation/images/lighthouse-create.png"
+    alt="Lighthouse result for the MealFlow create recipe page"
+    width="600"
+  >
+</p>
+
+Details page: 
+
+<p align="center">
+  <img
+    src="documentation/images/lighthouse-details.png"
+    alt="Lighthouse result for the MealFlow details page"
+    width="600"
+  >
+</p>
+
+Performance scores varied slightly between test runs. The Recipe Details page achieved a slightly lower performance score because the main recipe image is displayed above the fold and is intentionally loaded with high priority to improve the user experience. While this can have a small impact on the initial page load performance, it ensures that the primary page content is visible immediately. To minimise layout shifts, explicit image dimensions were defined, and non-critical images elsewhere in the application are loaded lazily where appropriate.
+
+---
+
 # Manual Feature Testing
 
 ## Visitor Features

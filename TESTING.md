@@ -259,6 +259,27 @@ Performance scores varied slightly between test runs. The Recipe Details page ac
 
 ## Saved Recipes
 
+| Feature | Test | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| Save recipe | Select **Save recipe** | The button changes to **Saved** and feedback is displayed | Worked as expected | Pass |
+| Remove saved recipe | Select **Saved** again | The recipe is removed and the button returns to **Save recipe** | Worked as expected | Pass |
+| Save without page reload | Save or remove a recipe | The button and feedback update without a full reload | Worked as expected | Pass |
+| View saved recipes | Open **My Recipes** after saving a recipe | The saved recipe appears in the saved section | Worked as expected | Pass |
+| Empty saved section | Open **My Recipes** without saved recipes | **You have not saved any recipes yet.** is displayed | Worked as expected | Pass |
+| Prevent duplicate saves | Save the same recipe more than once | Only one saved relationship exists | Worked as expected | Pass |
+
+**Example screenshots:**
+
+| Save recipe                                                                                                                | Remove saved recipe                                                                                                                 |
+| -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="documentation/images/toast-saved-success.png" alt="Success message displayed after saving a recipe" width="300"> | <img src="documentation/images/toast-unsave-success.png" alt="Success message displayed after removing a saved recipe" width="300"> |
+
+| Saved recipes                                                                                                    | Empty saved recipes                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| <img src="documentation/images/my-recipes-saved.png" alt="My Recipes page displaying saved recipes" width="300"> | <img src="documentation/images/my-recipes-norecipes.png" alt="My Recipes page displaying the empty-state message" width="300"> |
+
+---
+
 ## Recipe CRUD
 
 ## Authorisation

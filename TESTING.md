@@ -236,6 +236,27 @@ Performance scores varied slightly between test runs. The Recipe Details page ac
 
 ## Authentication
 
+| Feature | Test | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| Open Registration page | Select **Register** in the navigation | The Registration form opens | Worked as expected | Pass |
+| Register valid account | Submit a valid username and matching passwords | The account is created, the user is logged in and redirected to Home | Worked as expected | Pass |
+| Invalid registration | Submit invalid information | Validation feedback is displayed | Worked as expected | Pass |
+| Password mismatch | Enter two different passwords | The account is not created and an error is displayed | Worked as expected | Pass |
+| Open Login page | Select **Login** | The Login form opens | Worked as expected | Pass |
+| Valid login | Submit correct credentials | The user is authenticated and redirected | Worked as expected | Pass |
+| Invalid login | Submit incorrect credentials | An error message is displayed | Worked as expected | Pass |
+| Authenticated navigation | Log in successfully | **My Recipes**, **Add Recipe** and **Logout** are displayed | Worked as expected | Pass |
+| Logout | Select **Logout** | The user is logged out and visitor navigation is restored | Worked as expected | Pass |
+
+
+**Example screenshots:**
+
+| Registration validation                                                                                                                 | Login validation                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="documentation/images/register-fail.png" alt="Registration form displaying validation feedback for invalid input" width="300"> | <img src="documentation/images/login-fail.png" alt="Login form displaying an error message for invalid credentials" width="300"> |
+
+---
+
 ## Saved Recipes
 
 ## Recipe CRUD

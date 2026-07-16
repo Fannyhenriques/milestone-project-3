@@ -112,21 +112,21 @@ Although some details differ from the original wireframe, the core layout and de
   <tr>
     <td>
       <img
-        src="documentation/images/home-mobile-wireframe.png"
+        src="documentation/images/wireframe-mobile.png"
         alt="Initial MealFlow Home page mobile wireframe"
         width="200"
       >
     </td>
     <td>
       <img
-        src="documentation/images/home-tablet-wireframe.png"
+        src="documentation/images/wireframe-tablet.png"
         alt="Initial MealFlow Home page tablet wireframe"
         width="280"
       >
     </td>
     <td>
       <img
-        src="documentation/images/home-desktop-wireframe.png"
+        src="documentation/images/wire-frame-desktop.png"
         alt="Initial MealFlow Home page desktop wireframe"
         width="400"
       >

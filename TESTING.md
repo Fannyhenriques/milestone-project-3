@@ -282,6 +282,77 @@ Performance scores varied slightly between test runs. The Recipe Details page ac
 
 ## Recipe CRUD
 
+### Create
+
+| Test | Expected Result | Actual Result | Status |
+|---|---|---|---|
+| Open Create Recipe page | The recipe form is displayed | Worked as expected | Pass |
+| Submit a valid recipe | The recipe is saved and its details page opens | Worked as expected | Pass |
+| View newly created recipe | The recipe appears on Home and My Recipes | Worked as expected | Pass |
+| Leave a required field empty | Submission is prevented and validation feedback is shown | Worked as expected | Pass |
+| Enter ingredients on separate lines | Ingredients appear as separate list items | Worked as expected | Pass |
+| Leave servings unchanged | The default value of 4 is saved | Worked as expected | Pass |
+| Create recipe without an uploaded image | A default image is selected from its category | Worked as expected | Pass |
+
+
+**Example screenshots:**
+
+| Leave required field empty                                                                                                         | Newly Created Recipe                                                                                                             |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="documentation/images/fill-in-category.png" alt="Create Recipe form with recipe information entered" width="300"> | <img src="documentation/images/created-recipe-example.png" alt="Recipe Details page showing a newly created recipe" width="300"> |
+
+
+### Read
+
+| Test | Expected Result | Actual Result | Status |
+|---|---|---|---|
+| Open a recipe card | The correct recipe title, image and information are displayed | Worked as expected | Pass |
+| View ingredients | All stored ingredients are displayed | Worked as expected | Pass |
+| View instructions | Instructions are displayed as ordered steps | Worked as expected | Pass |
+| View recipe metadata | Category, cooking time and servings are displayed | Worked as expected | Pass |
+
+**Example screenshots:**
+
+| Recipe Overview                                                                                                                         | Ingredients and Instructions                                                                                                                            |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="documentation/images/recipe-detail-page1.png" alt="Recipe Details page showing the recipe overview and metadata" width="300"> | <img src="documentation/images/recipe-detail-page2.png" alt="Recipe Details page displaying the ingredients list and cooking instructions" width="300"> |
+
+
+### Update
+
+| Test | Expected Result | Actual Result | Status |
+|---|---|---|---|
+| Open own recipe for editing | The form opens with the existing data | Worked as expected | Pass |
+| Save valid changes | The changes are stored and displayed on the details page | Worked as expected | Pass |
+| Update ingredients | Previous ingredients are replaced with the updated list | Worked as expected | Pass |
+| Cancel editing | No new changes are saved | Worked as expected | Pass |
+| View success feedback | A confirmation message appears after saving | Worked as expected | Pass |
+
+
+**Example screenshot:**
+
+| Success Message |
+|---|
+| <img src="documentation/images/change-recipe-success-toast.png" alt="Confirmation message displayed after successfully updating a recipe" width="400"> |
+
+
+### Delete
+
+| Test | Expected Result | Actual Result | Status |
+|---|---|---|---|
+| Select **Delete recipe** | A confirmation dialog appears | Worked as expected | Pass |
+| Cancel deletion | The dialog closes and the recipe remains unchanged | Worked as expected | Pass |
+| Confirm deletion | The recipe is removed and success feedback appears | Worked as expected, with the minor issue documented below | Pass with known issue |
+| Check Home and My Recipes | The deleted recipe no longer appears | Worked as expected | Pass |
+
+**Example screenshots:**
+
+| Delete Confirmation                                                                                                                 | Deletion Success                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| <img src="documentation/images/confirm-delete-recipe.png" alt="Confirmation dialog displayed before deleting a recipe" width="300"> | <img src="documentation/images/delete-recipe-success-toast.png" alt="Success message displayed after deleting a recipe" width="300"> |
+
+---
+
 ## Authorisation
 
 ## Administrator Features

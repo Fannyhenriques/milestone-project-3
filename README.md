@@ -625,3 +625,44 @@ A unique database constraint prevents the same user from saving the same recipe 
 
 
 ---
+
+# Technologies Used
+
+## Languages
+
+- **HTML5** — Used to structure the application's pages and content.
+- **CSS3** — Used for layout, styling, responsive design and visual feedback.
+- **JavaScript** — Used for interactive features such as filtering, the hamburger menu, delete confirmation and saving recipes without a full page reload.
+- **Python** — Used for the server-side logic, database interaction and Django application functionality.
+
+## Frameworks and Libraries
+
+| Technology | Purpose |
+|---|---|
+| Django | Back-end framework |
+| Gunicorn | Production web server |
+| WhiteNoise | Static-file serving |
+| dj-database-url | Database URL configuration |
+| psycopg2-binary | PostgreSQL database adapter |
+
+## Database
+
+| Environment | Database |
+|---|---|
+| Local development | SQLite |
+| Deployed application | PostgreSQL |
+
+## Tools
+
+| Tool | Purpose |
+|---|---|
+| Git | Version control |
+| GitHub | Repository hosting |
+| Visual Studio Code | Code editor |
+| Chrome Developer Tools | Debugging and responsive testing |
+| Django Admin | Data administration |
+| ADD_HOSTING_PLATFORM | Cloud deployment |
+| ADD_WIREFRAME_TOOL | Wireframe creation |
+| ADD_ERD_TOOL | Database diagram creation |
+
+---

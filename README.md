@@ -508,3 +508,43 @@ Accessibility considerations include:
 - Confirmation before recipe deletion.
 
 ---
+
+# User Stories
+## Visitor User Stories
+
+| User Story | Outcome |
+|---|---|
+| As a visitor, I want to understand the purpose of the website so that I know what MealFlow offers. | The Home page contains a clear introduction and recipe collection. |
+| As a visitor, I want to browse available recipes so that I can discover new meal ideas. | Recipe cards are displayed on the Home page. |
+| As a visitor, I want to search by recipe title so that I can quickly find a specific recipe. | The Home page includes a title search field. |
+| As a visitor, I want to filter recipes so that I can find recipes that suit my needs. | Recipes can be filtered by meal type and food category. |
+| As a visitor, I want to view full recipe details so that I can prepare the meal. | Each recipe has a dedicated Recipe Details page. |
+| As a visitor, I want to return to the recipe collection so that I can continue browsing. | A **Back to recipes** button links to the Home page. |
+| As a visitor, I want to register for an account so that I can save and create recipes. | A Registration page is available. |
+| As a visitor, I want to log in so that I can access personalised features. | A Login page is available. |
+
+## Registered User Stories
+
+| User Story | Outcome |
+|---|---|
+| As a registered user, I want to save recipes so that I can find them again later. | Recipes can be added to the user's saved collection. |
+| As a registered user, I want to remove saved recipes so that I can manage my collection. | Saved recipes can be removed without reloading the page. |
+| As a registered user, I want to view my saved recipes so that they are available in one place. | Saved recipes appear on the My Recipes page. |
+| As a registered user, I want to create recipes so that I can contribute my own content. | Authenticated users can create recipes. |
+| As a registered user, I want newly created recipes to appear immediately so that I can access them without delay. | New recipes appear on the Home and My Recipes pages after creation. |
+| As a registered user, I want to edit my recipes so that I can correct or improve them. | Recipe authors can edit their own recipes. |
+| As a registered user, I want to delete my recipes so that I can remove content I no longer want. | Recipe authors can delete their own recipes. |
+| As a registered user, I want a warning before deletion so that I do not remove a recipe accidentally. | A JavaScript confirmation dialog is displayed. |
+| As a registered user, I want feedback after completing an action so that I know it succeeded. | Toast-style feedback is displayed after saving, creating, editing or deleting a recipe. |
+| As a registered user, I want to log out so that my account remains secure. | A Logout option is available in the navigation. |
+## Administrator User Stories
+
+| User Story | Outcome |
+|---|---|
+| As an administrator, I want to manage recipe categories so that the available options remain accurate. | Categories can be managed through Django admin. |
+| As an administrator, I want to manage recipes so that inappropriate or incorrect content can be updated or removed. | Recipes can be managed through Django admin. |
+| As an administrator, I want to view recipe ingredients alongside recipes so that recipe content is easier to manage. | Ingredients are displayed as an inline section in the recipe admin interface. |
+| As an administrator, I want to manage saved-recipe relationships so that database records can be reviewed. | SavedRecipe records are available in Django admin. |
+
+
+

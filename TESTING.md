@@ -87,6 +87,50 @@ All tested files passed without remaining PEP8 errors or warnings.
 
 ## Django System Checks
 
+Django's built-in system check was run from the project terminal:
+
+```bash
+python manage.py check
+```
+
+Expected successful result:
+
+```text
+System check identified no issues (0 silenced).
+```
+Result:
+
+<p align="center">
+  <img
+    src="documentation/images/testing-django-check.png"
+    alt="Django system checks showing no issues"
+    width="600"
+  >
+</p>
+
+The project was also checked for model changes without migrations:
+
+```bash
+python manage.py makemigrations --check
+```
+
+Expected successful result:
+
+```text
+No changes detected
+```
+Result:
+
+<p align="center">
+  <img
+    src="documentation/images/testing-django-check-1.png"
+    alt="Django system checks showing no issues"
+    width="600"
+  >
+</p>
+
+---
+
 # Lighthouse Testing
 
 # Manual Feature Testing

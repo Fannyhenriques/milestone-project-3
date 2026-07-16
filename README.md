@@ -906,3 +906,79 @@ The following process was used to deploy MealFlow:
 > The initial fixture should only be loaded once to avoid duplicate or conflicting database records.
 
 ---
+
+## Local Development
+
+To run MealFlow locally, Python and Git must be installed.
+
+### Cloning
+
+1. Open the [MealFlow GitHub repository](https://github.com/Fannyhenriques/milestone-project-3).
+2. Select **Code**.
+3. Copy the HTTPS, SSH or GitHub CLI URL.
+4. Open a terminal and move to the directory where the project should be stored.
+5. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Fannyhenriques/milestone-project-3.git
+   ```
+
+6. Enter the project directory:
+
+   ```bash
+   cd milestone-project-3
+   ```
+
+7. Create a virtual environment:
+
+   ```bash
+   python -m venv venv
+   ```
+
+8. Activate the virtual environment.
+
+   On macOS or Linux:
+
+   ```bash
+   source venv/bin/activate
+   ```
+
+   On Windows:
+
+   ```bash
+   venv\Scripts\activate
+   ```
+
+9. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+10. Apply the database migrations:
+
+    ```bash
+    python manage.py migrate
+    ```
+
+11. Create a superuser if administrator access is required:
+
+    ```bash
+    python manage.py createsuperuser
+    ```
+
+12. Start the local development server:
+
+    ```bash
+    python manage.py runserver
+    ```
+
+13. Open the local application at:
+
+    ```text
+    http://127.0.0.1:8000/
+    ```
+
+The local version uses SQLite by default unless a different `DATABASE_URL` environment variable is supplied.
+
+---

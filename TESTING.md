@@ -484,7 +484,39 @@ The following elements were checked:
 
 # Browser Compatibility
 
+MealFlow was tested in the following desktop browsers on macOS to ensure consistent functionality, layout, and responsiveness.
+
+| Browser         | Device or Operating System | Result |
+| --------------- | -------------------------- | ------ |
+| Google Chrome   | macOS (Desktop)            | Pass   |
+| Mozilla Firefox | macOS (Desktop)            | Pass   |
+| Microsoft Edge  | macOS (Desktop)            | Pass   |
+| Safari          | macOS (Desktop)            | Pass   |
+
+All tested browsers displayed the application as expected, with no browser-specific issues affecting functionality or layout.
+
+
+---
+
 # Accessibility Testing
+
+Accessibility was reviewed through manual testing and Google Lighthouse.
+
+| Test                  | Expected Result                                                                             | Status |
+| --------------------- | ------------------------------------------------------------------------------------------- | ------ |
+| Semantic HTML         | Appropriate headings, landmarks, forms and navigation elements are used                     | Pass   |
+| Keyboard navigation   | Interactive elements can be reached using the **Tab** key                                   | Pass   |
+| Visible focus         | Keyboard focus remains clearly visible                                                      | Pass   |
+| Form labels           | Form inputs include visible or visually hidden labels                                       | Pass   |
+| Fieldsets and legends | Related form controls are grouped correctly                                                 | Pass   |
+| ARIA attributes       | Navigation, buttons and dynamic elements include appropriate ARIA attributes where required | Pass   |
+| Alternative text      | Decorative and content images include appropriate `alt` text                                | Pass   |
+| Colour contrast       | Colour contrast was reviewed using Lighthouse                                               | Pass   |
+
+Accessibility was also evaluated using Google Lighthouse, achieving high accessibility scores across the application's primary pages.
+
+
+---
 
 # Bugs
 

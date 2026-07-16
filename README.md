@@ -135,3 +135,18 @@ Although some details differ from the original wireframe, the core layout and de
 </table>
 
 ---
+
+### Core Features
+
+MealFlow includes:
+
+- Public recipe browsing with search, filters and load-more functionality.
+- Detailed recipe pages with ingredients and instructions.
+- User registration, login and logout.
+- Saved recipe collections for registered users.
+- Full recipe CRUD for authenticated users.
+- Authorisation checks for editing and deleting recipes.
+- Responsive navigation and recipe layouts.
+- Success messages and toast-style feedback.
+- Django admin management.
+

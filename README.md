@@ -379,3 +379,27 @@ Selecting **Delete recipe** opens a confirmation dialog to prevent accidental de
   >
 </p>
 
+#### Django Admin
+
+- The Django admin interface is available to authorised administrators and provides central management of the application's data.
+
+- Administrators can create, view, update and delete categories, recipes, ingredients, saved-recipe records and user accounts.
+
+### User Flow
+
+The main user journeys are outlined below. More detailed explanations are provided in the [Features](#features) section.
+
+**Visitors can:**
+
+- Browse, search and filter recipes.
+- Open a recipe to view ingredients and instructions.
+- Register or log in to access personalised features.
+
+**Registered users can:**
+
+- Save and remove recipes from their collection.
+- View saved and created recipes under **My Recipes**.
+- Create, edit and delete their own recipes.
+- Log out securely.
+
+---

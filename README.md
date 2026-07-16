@@ -566,3 +566,62 @@ Possible future improvements include:
 
 ---
 
+# Data Model
+
+MealFlow uses a relational database together with Django's built-in `User` model.
+
+The main application models are described below.
+
+## Category
+
+The `Category` model stores recipe categories and their fallback images.
+
+| Field | Type | Purpose |
+|---|---|---|
+| `name` | CharField | Category name |
+| `slug` | SlugField | URL-safe category value |
+| `default_image` | CharField | Static fallback image path |
+
+## Recipe
+
+The `Recipe` model stores the main recipe data.
+
+| Field | Type | Purpose |
+|---|---|---|
+| `author` | ForeignKey | User who created the recipe |
+| `category` | ForeignKey | Related recipe category |
+| `title` | CharField | Recipe title |
+| `description` | TextField | Short recipe description |
+| `instructions` | TextField | Cooking instructions |
+| `meal_type` | CharField | Breakfast, lunch, dinner or dessert |
+| `servings` | PositiveIntegerField | Number of servings |
+| `cooking_time` | PositiveIntegerField | Total cooking time in minutes |
+| `image_name` | CharField | Optional static image filename |
+| `created_at` | DateTimeField | Creation timestamp |
+| `updated_at` | DateTimeField | Last update timestamp |
+
+## Ingredient
+
+The `Ingredient` model stores individual ingredients linked to a recipe.
+
+| Field | Type | Purpose |
+|---|---|---|
+| `recipe` | ForeignKey | Related recipe |
+| `name` | CharField | Ingredient name |
+| `quantity` | CharField | Ingredient quantity |
+| `order` | PositiveIntegerField | Display order |
+
+## SavedRecipe
+
+The `SavedRecipe` model connects users with recipes they have saved.
+
+| Field | Type | Purpose |
+|---|---|---|
+| `user` | ForeignKey | User who saved the recipe |
+| `recipe` | ForeignKey | Saved recipe |
+| `saved_at` | DateTimeField | Date the recipe was saved |
+
+A unique database constraint prevents the same user from saving the same recipe more than once.
+
+
+---
